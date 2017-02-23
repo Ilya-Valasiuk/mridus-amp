@@ -1,0 +1,15 @@
+{
+  "name": "mridus-amp",
+  "version": "1.0.0",
+  "description": "ridus amp",
+  "main": "index.html",
+  "dependencies": {
+    "http-server": "^0.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

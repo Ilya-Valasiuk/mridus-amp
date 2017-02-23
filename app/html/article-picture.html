@@ -1,0 +1,974 @@
+<!doctype html>
+<html amp lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <title>Hello, AMPs</title>
+    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,400,400italic,500italic,500,700italic,700,900,900italic|Roboto+Slab:700,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "NewsArticle",
+            "headline": "Open-source framework for publishing content",
+            "datePublished": "2015-10-07T12:02:41Z",
+            "image": [
+                "logo.jpg"
+            ]
+        }
+    </script>
+   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-custom>
+        /* any custom styles go here. */
+        html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: bold;
+        }
+        h6 {
+        font-size: 14px;
+        /* in use */ }
+
+        h5 {
+        font-size: 15px;
+        /* in use */ }
+
+        h4 {
+        font-size: 18px;
+        /* in use */
+        font-family: 'Roboto Slab', serif; }
+
+        h3 {
+        font-family: 'Roboto Slab', serif;
+        font-size: 21px;
+        margin: 15px 0 30px; }
+
+        h2 {
+        font-family: 'Roboto Slab', serif;
+        font-size: 26px;
+        /* in use */
+        margin-bottom: 15px; }
+
+        h1 {
+        font-family: 'Roboto Slab', serif;
+        font-size: 28px;
+        /* in use */
+        margin-bottom: 20px; }
+
+        hr {
+        margin: 15px 0;
+        border: none;
+        border-bottom: 1px solid #67757e; }
+        hr.dashed {
+            border-bottom-style: dashed;
+            border-bottom-color: #c2c2c2; 
+    }
+        html {
+            font-size: 62.5%;
+            width: 100%;
+            height: 99.9%;
+            position: relative;
+        }
+        
+        body {
+            position: relative;
+            line-height: 1.2;
+            font-size: 1.6rem;
+            font-family: 'Roboto', sans-serif;
+            width: 100%;
+            height: 99.9%;
+            background: #eee;
+            zoom: 1;
+            overflow: auto;
+            overflow-x: hidden;
+            color: #333;
+        }
+        ol, ul {
+            list-style: none;
+            margin: 0;
+        }
+        a {
+            color: #000;
+        }
+        h3 {
+            font-family: 'Roboto Slab', serif;
+            font-size: 21px;
+            margin: 15px 0 30px;
+        }
+        /*----------------COMMON------------- */
+        .page {
+            padding-top: 44px;
+        }
+        .row {
+            display: -ms-flexbox;
+            display: flex;
+        }
+        .col-12 {
+            width: 100%;
+        }
+        .col-6:first-child {
+            margin-left: 0;
+        }
+
+        .col-6 {
+            width: 50%;
+            margin-left: 10px;
+        }
+        .article__page-title {
+            margin-bottom: 5px;
+            margin-top: 0;
+        }
+        
+        .bgColor_white, .bgColor_white .section-title {
+            background: #fff;
+            color: #000;
+        }
+        .padding-tb {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .padding-lr {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        
+        .full-width {
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+        .clearfix:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .footer {
+            padding-top: 13px;
+            background: #657889;
+        }
+        .footer .footerLinks {
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+        .footer p {
+            margin-bottom: 10px;
+            font: bold 16px 'Roboto Slab', serif;
+            color: #fff;
+        }
+        .socials {
+            display: -ms-flexbox;
+            display: flex;
+        }
+        .footer .footerSubscribe {
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+        .footer .footerSubscribe form {
+            margin-bottom: 15px;
+        }
+        .footer .footerSubscribe__form {
+            display: -ms-flexbox;
+            display: flex;
+        }
+        .footer .footerSubscribe__form .footerSubscribe__input {
+            border: 1px solid #ffd051;
+            color: #fff;
+            background: transparent;
+        }
+
+        input[type="text"], input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="url"] {
+            width: 100%;
+            margin: 0;
+            padding: 6px 7px 6px;
+            border: 1px solid #bbb;
+            border-radius: 0;
+            font: 300 17px/21px 'Roboto', sans-serif;
+            -webkit-appearance: none;
+        }
+        .yellowButton {
+            position: relative;
+            margin-right: 10px;
+            padding: 9px 6px 8px 10px;
+            font: bold 13px 'Roboto Slab', serif;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #000;
+            background: #ffd051;
+            transition: all 0.18s;
+        }
+        .yellowButton .corner {
+            position: absolute;
+            bottom: 0;
+            right: -10px;
+            display: block;
+            width: 10px;
+            height: 25px;
+            background: #ffd051;
+            transition: all 0.18s;
+        }
+        .yellowButton .corner:before {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: -10px;
+            display: block;
+            border: 5px solid transparent;
+            border-bottom-color: #000;
+            border-left-color: #000;
+        }
+        .yellowButton .corner:after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: block;
+            border: 5px solid transparent;
+            border-top-color: rgba(0, 0, 0, 0.1);
+            border-right-color: rgba(0, 0, 0, 0.1);
+        }
+        .footer .footerSubscribe__siteLink {
+            text-decoration: none;
+            color: #fff;
+            font: 100 14px 'Roboto', sans-serif;
+        }
+        .fa {
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .fa-globe:before {
+            content: "\f0ac";
+        }
+        .footer .footerCopy {
+            position: relative;
+            padding: 16px 15px;
+            background: #000;
+            font-size: 12px;
+            box-sizing: border-box;
+        }
+        .footer .footerCopy__text {
+            margin: 0;
+            font-size: 12px;
+            font-weight: normal;
+            color: #8a8a8a;
+        }
+        .footer .footerCopy__18plus {
+            display: block;
+            position: absolute;
+            right: 15px;
+            top: 13px;
+            width: 22px;
+            height: 22px;
+            background-position: 0px 0px;
+        }
+        /*----------------------END COMMON------------------------*/
+        .header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 777;
+            display: -ms-flexbox;
+            display: flex;
+            width: 100%;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            -ms-flex-align: center;
+            align-items: center;
+            padding: 0 0 0 15px;
+            background: #FFF;
+            box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.16);
+            box-sizing: border-box;
+        }
+        .header__mainLogo {
+            display: block;
+            transition: opacity 300ms ease-out;
+        }
+
+        .header__mainLogo img {
+            transition: all 200ms ease-out;
+        }
+
+        .tabs-inline {
+            margin: 0;
+        }
+        .tabs-inline__item:first-child {
+            margin-left: 0;
+        }
+        .tabs-inline__item {
+            display: inline-block;
+            text-transform: uppercase;
+            margin-left: .46em;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        .tabs-inline__item__link {
+            color: #a3a3a3;
+            text-decoration: none;
+        }
+        .tabs-inline__item:first-child:before {
+            display: none;
+        }
+        .tabs-inline__item:before {
+            display: inline-block;
+            content: "";
+            width: .286em;
+            height: .286em;
+            margin-right: .6em;
+            margin-bottom: .24em;
+            background: #ffd051;
+        }
+
+        .author-container {
+            position: relative;
+            display: -ms-flexbox;
+            display: flex;
+            margin-bottom: 15px;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+        .author-container__avatar {
+            -ms-flex-negative: 0;
+            flex-shrink: 0;
+            width: 34px;
+            height: 34px;
+            margin-right: 10px;
+        }
+        .author-container__avatar img {
+            width: 100%;
+            border-radius: 50%;
+        }
+        .author-container__info {
+            padding-left: 10px;
+            border-left: 1px solid #dbdbdb;
+            font-size: 12px;
+            color: #848484;
+        }
+        .author-container__info a {
+            text-decoration: underline;
+            color: inherit;
+        }
+        .author-container__info a:before {
+            display: inline-block;
+            content: "";
+            width: .286em;
+            height: .286em;
+            margin-right: 5px;
+            margin-left: 5px;
+            margin-bottom: .24em;
+            background: #ffd051;
+        }
+        .article__text {
+            font-size: 16px;
+            line-height: 23px;
+            font-weight: 300;
+            color: #333;
+        }
+        .article__text > div > p {
+            margin-bottom: 20px;
+        }
+        .article__picture {
+            padding: 7px 0;
+            margin-bottom: 20px;
+            background: #eee;
+        }
+        .article__picture__href {
+            display: block;
+            margin-bottom: 10px;
+            line-height: 0;
+        }
+        .article__picture__image {
+            width: 100%;
+        }
+        .article__picture__name {
+            padding-left: 15px;
+            font: bold 16px 'Roboto Slab', serif;
+        }
+        .article__picture__author {
+            padding: 0 0 10px 15px;
+            font-size: 13px;
+            color: #868686;
+            font-family: 'Roboto', serif;
+        }
+        .article-tags {
+            font-size: 12px;
+            margin-bottom: 30px;
+        }
+        .section-title {
+            position: relative;
+            padding: 10px 0;
+            font: bold 18px 'Roboto Slab', serif;
+            text-align: center;
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        .brick {
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .brick__header {
+            background: #ffd051;
+            box-sizing: border-box;
+            font-weight: bold;
+            text-decoration: none;
+            font-family: 'Roboto Slab', serif;
+            text-transform: uppercase;
+            color: #000;
+            padding-top: 13px;
+            padding-bottom: 13px;
+        }
+        .brick__header-gray {
+            background: #eee;
+        }
+        .todayMainNewsList__item {
+            position: relative;
+            padding: 0 0 0 30px;
+            border-top: 1px solid #eee;
+        }
+        .todayMainNewsList__item:first-child {
+            border-top: none;
+        }
+        .todayMainNewsList__item:before {
+            content: "";
+            position: absolute;
+            top: 19px;
+            left: 0px;
+            display: block;
+            width: 12px;
+            height: 10px;
+            background: #ffd051;
+        }
+        .todayMainNewsList__link {
+            display: block;
+            padding: 16px 0;
+            font: normal 16px/1.2 'Roboto Slab', serif;
+            color: #000;
+            text-decoration: none;
+        }
+        .newsList {
+            padding: 0 15px;
+        }
+        .newsList ul {
+            margin: 7px 0;
+        }
+        .newsList__item {
+            padding: 13px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .newsList__item-date {
+            display: block;
+            float: left;
+            padding-top: 2px;
+            width: 28px;
+            font-size: 9px;
+            color: #7e7e7e;
+        }
+        .newsList__item-link {
+            display: block;
+            margin-left: 29px;
+            font-size: 15px;
+            color: #343434;
+            text-decoration: none;
+        }
+        .newsList__all {
+            display: block;
+            padding: 15px 0;
+            border: 1px solid #667787;
+            font-size: 11px;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #85929f;
+        }
+
+        /*BRICK*/
+        .brick__image {
+            position: relative;
+            height: auto;
+            margin-bottom: 10px;
+            background-size: cover;
+            background-position: center;
+        }
+        .col-12 .brick__label-position {
+            bottom: 10px;
+        }
+        .brick__label-position {
+            z-index: 20;
+            position: absolute;
+            bottom: 7px;
+            left: 0px;
+            line-height: 0;
+        }
+        .brick__label {
+            display: inline-block;
+            margin-bottom: 2px;
+            padding: 3px 5px 1px;
+            font: bold 9px/1.2 'Roboto', sans-serif;
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none;
+            background: rgba(102, 119, 135, 0.7);
+            transition: background .15s ease;
+        }
+        .brick__label:last-child {
+            margin-bottom: 0;
+        }
+        .clickable {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 12;
+        }
+        .brick__mainLinkWrapper {
+            margin-bottom: 3px;
+        }
+        .brick__mainLink {
+            font: bold 16px/18px 'Roboto Slab', serif;
+            color: #000;
+            text-decoration: none;
+        }
+        .brick__mainLinkDate {
+            margin-top: 3px;
+            font: 300 9px 'Roboto', sans-serif;
+            color: #5b6a78;
+            text-transform: uppercase;
+        }
+        .brick__text {
+            margin-bottom: 4px;
+            color: #000;
+            font-size: 13px;
+            font-weight: 300;
+            line-height: 1.3;
+        }
+        /*END BRICK*/
+        /*COUNTER BLOCK*/
+        .countersBlock {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -ms-flex-align: center;
+            align-items: center;
+            margin-bottom: 5px;
+            font: 700 11px 'Roboto', sans-serif;
+        }
+        .countersBlock__item {
+            position: relative;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            margin-right: 15px;
+            color: #000;
+            opacity: 0.3;
+        }
+        .countersBlock__item-readLater {
+            text-decoration: none;
+            color: #000;
+            border-radius: 10px;
+            padding: 5px 6px 4px 6px;
+            font-weight: normal;
+            font-size: 10px;
+            z-index: 25;
+            text-transform: uppercase;
+        }
+        /*END COUNTER BLOCK*/
+    </style>
+</head>
+
+<body class="article">
+    <div class="page">
+        <header class="header header_article" id="header">
+            <a href="#" class="header__mainLogo" title="На главную">
+                <amp-img src="./../images/logo.png" class="x1" width="102" height="40" alt="РИДУС"></amp-img>
+            </a>
+        </header>
+
+        <section class="bgColor_white">
+            <div class="article__container ">
+                <ul class="tabs-inline padding-lr padding-tb">
+                    <li class="tabs-inline__item"><a href="#" class="tabs-inline__item__link" title="">Происшествия</a></li>
+                    <li class="tabs-inline__item"><a href="#" class="tabs-inline__item__link" title="">Война</a></li>
+                </ul>
+                <div class="row padding-lr">
+                    <div class="col-12">
+                        <h3 class="article__page-title">Освобождение Пальмиры регулярной армией</h3>
+                        
+                    </div>
+                </div>
+                <div class="row padding-lr padding-tb">
+                    <div class="col-12">
+                        <div class="author-container clearfix @@class">
+                            <a class="author-container__avatar" href="" title="">
+                                <amp-img src="http://www.ridus.ru/images/avatars/141718/large_b7147dcd85.jpg" alt="Картинка" width="34" height="34"></amp-img>
+                            </a>
+                            <ul class="author-container__info">
+                                <li>21 августа, 12:29<a href="" title="">Екатерина Трофимова,</a></li>
+                                <li>журналист-эксперт в международной сфере, лауреат столичной премии</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row article__text padding-lr">
+                    <div class="col-12">
+                        <p>
+                            «Ридус» ведет онлайн-трансляцию события.
+                        </p>
+
+                        <div class="full-width article__picture">
+                            <a class="article__picture__href" href="#" title="">
+                                <amp-img class="article__picture__image" src="http://www.ridus.ru/images/2016/3/28/382516/large_7065757556.jpg" alt="Картинка" height="639" width="960" layout="responsive"></amp-img>
+                            </a>
+                            <p class="article__picture__name">
+                                Храм в Пальмире
+                            </p>
+                            <p class="article__picture__author">
+                                © kelin/pixabay.com
+                            </p>
+                        </div>
+
+                        <p>
+                            Совет безопасности Нидерландов публикует доклад о крушении боинга на Украине. Эксперты сосредоточатся на 4 главных вопросах: причинах катастрофы, проблеме полета над зоной конфликта, осознавали ли пассажиры, что происходило в тот злополучный момент, и почему родственники погибших были вынуждены несколько дней ждать подтверждения властей, летели ли их близкие на этом рейсе.
+                        </p>
+
+                        <div class="full-width article__picture">
+                            <a class="article__picture__href" href="#" title="">
+                                <amp-img class="article__picture__image" src="http://www.ridus.ru/images/2016/3/28/382528/hd_230c437033.jpg" alt="Картинка" height="1080" width="1623" layout="responsive"></amp-img>
+                            </a>
+                            <p class="article__picture__name">
+                                Храм в Пальмире
+                            </p>
+                            <p class="article__picture__author">
+                                © kelin/pixabay.com
+                            </p>
+                        </div>
+
+                        <p>
+                            Первыми с докладом ознакомились родственники погибших, журналисты пока ждут своей очереди. Пресс-конференция начнется в два часа по московскому времени.
+                        </p>
+
+                        <div class="full-width article__picture">
+                            <a class="article__picture__href" href="#" title="">
+                                <amp-img class="article__picture__image" src="http://www.ridus.ru/images/2016/3/28/382538/hd_0428e017d3.jpg" alt="Картинка" height="1080" width="1623" layout="responsive"></amp-img>
+                            </a>
+                            <p class="article__picture__name">
+                                Храм в Пальмире
+                            </p>
+                            <p class="article__picture__author">
+                                © kelin/pixabay.com
+                            </p>
+                        </div>
+
+                        <p>
+                            «Никто не должен был там летать, ни единый самолет, так как это было слишком опасно. Мы все видели это по ТВ, я не верила своим ушам, когда услышала, что они летели в том районе» — заявила БиБиСи Селена Фредрикз, мать погибшего на борту MH17 Брайса Фредрикза.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row padding-lr">
+                    <div class="col-12">
+                        <p class="article-tags">
+                            Теги:
+                            <a href="#" title="">нефть</a>,
+                            <a href="#" title="">Казахстан</a>,
+                            <a href="#" title="">прогнозы</a>,
+                            <a href="#" title="">Назарбаев</a>
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+
+        <section class="bgColor_white">
+            <div class="section-title">
+                Картина дня
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="brick">
+                        <h4 class="brick__header padding-lr brick__header-gray">
+                            главное за сегодня
+                        </h4>
+                        <ul class="todayMainNewsList padding-lr">
+                            <li class="todayMainNewsList__item">
+                                <a class="todayMainNewsList__link" href="#" title="">Кадырова пытались убить взорвавшие «Домодедово» терористы
+                                </a>
+                            </li>
+                            <li class="todayMainNewsList__item">
+                                <a class="todayMainNewsList__link" href="#" title="">Украина сравнила французских депутатов в Крыму с варварами
+                                </a>
+                            </li>
+                            <li class="todayMainNewsList__item">
+                                <a class="todayMainNewsList__link" href="#" title="">Зацепер парализовал движение электричек в Москве
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="brick">
+                        <h4 class="brick__header padding-lr">
+                            Бездна новостей
+                        </h4>
+                        <div class="newsList">
+                            <ul>
+                                <li class="newsList__item clearfix">
+                                    <span class="newsList__item-date">18:34</span>
+                                    <a class="newsList__item-link" href="#" title="">Украинские списки «белых» и «черных» артистов удивили
+                                    </a>
+                                </li>
+                                <li class="newsList__item clearfix">
+                                    <span class="newsList__item-date">18:20</span>
+                                    <a class="newsList__item-link" href="#" title="">В КПРФ предложили отдавать санкционные продукты детдомам
+                                    </a>
+                                </li>
+                                <li class="newsList__item clearfix">
+                                    <span class="newsList__item-date">18:17</span>
+                                    <a class="newsList__item-link" href="#" title="">Грузия опровергла присоединение к санкциям Евросоюза против России</a>
+                                </li>
+                                <li class="newsList__item clearfix">
+                                    <span class="newsList__item-date">18:03</span>
+                                    <a class="newsList__item-link" href="#" title="">Украинские списки «белых» и «черных» артистов удивили Минкульт</a>
+                                </li>
+                                <li class="newsList__item clearfix">
+                                    <span class="newsList__item-date">17:40</span>
+                                    <a class="newsList__item-link" href="#" title="">Грузия опровергла присоединение к санкциям Евросоюза против России</a>
+                                </li>
+                                <li class="newsList__item clearfix">
+                                    <span class="newsList__item-date">17:25</span>
+                                    <a class="newsList__item-link" href="#" title="">У слепой москвички похитили собаку- поводыря</a>
+                                </li>
+                                <li class="newsList__item clearfix">
+                                    <span class="newsList__item-date">17:15</span>
+                                    <a class="newsList__item-link" href="#" title="">В Молдавии утвержден новый премьер- министр</a>
+                                </li>
+                                <li class="newsList__item clearfix">
+                                    <span class="newsList__item-date">17:15</span>
+                                    <a class="newsList__item-link" href="#" title="">В КПРФ предложили отдавать санкционные продукты детдомам</a>
+                                </li>
+                            </ul>
+
+                            <a href="#" class="newsList__all" title="">Все новости</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row padding-lr padding-tb">
+                <div class="col-12">
+                    <div class="brick">
+                        <div class="brick__image">
+                            <amp-img src="http://molbiol.ru/forums/uploads/a003/b047/post-24502-1338479907.jpg" alt="Картинка" width="310" height="200" layout="responsive"></amp-img>
+                            <span class="brick__label-position">
+                                <a href="#i" class="brick__label" title="">Интересное</a>
+                                <br>
+                                <a href="#l" class="brick__label" title="">Жизнь</a>
+                            </span>
+                            <a href="#" class="clickable"></a>
+                        </div>
+                        <div class="brick__content">
+                                <div class="brick__mainLinkWrapper">
+                                    <a href="#" class="brick__mainLink" title="">На главном проспекте установят новые говорящие осановки</a>
+                                    <p class="brick__mainLinkDate">сегодня</p>
+                                </div>
+                                <p class="brick__text">
+                                    Политологи рассуждают о том, к чему в конечном итоге может привести внутрипартийный раскол в ПАРНАС.
+                                </p>
+                        </div>
+                        <a href="#" class="clickable"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row padding-lr padding-tb">
+                <div class="col-6">
+                    <div class="brick">
+                        <div class="brick__image">
+                            <amp-img src="http://f1.s.qip.ru/jAMAwieF.jpg" alt="Картинка" width="310" height="250" layout="responsive"></amp-img>
+                            <span class="brick__label-position">
+                            <a href="#i" class="brick__label" title="">Интересное</a>
+                            <br>
+                            <a href="#l" class="brick__label" title="">Жизнь</a>
+                            </span>
+                            <a href="#" class="clickable"></a>
+                        </div>
+                        <div class="brick__content">
+                            <div class="brick__mainLinkWrapper">
+                            <a href="#" class="brick__mainLink" title="">Известная модель надела паранджу после операции шмоперации</a>
+                            <p class="brick__mainLinkDate">сегодня</p>
+                            </div>
+                            <p class="brick__text">
+                            Главный научный сотрудник лаборатории солнечного ветра ИКИ РАН Олег Вайсберг рассказал.
+                            </p>
+                        </div>
+                        <a href="#" class="clickable"></a>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="brick">
+                        <div class="brick__image">
+                            <amp-img src="http://molbiol.ru/forums/uploads/a003/b047/post-24502-1338479907.jpg" alt="Картинка" width="310" height="250" layout="responsive"></amp-img>
+                            <a href="#31" class="brick__label brick__label-position" title="">здоровье</a>
+                            <a href="#" class="clickable"></a>
+                        </div>
+                        <div class="brick__content">
+                            <div class="brick__mainLinkWrapper">
+                            <a href="#" class="brick__mainLink" title="">Исследование: где в Москве опаснее безопаснее всего жить</a>
+                            <p class="brick__mainLinkDate">сегодня</p>
+                            </div>
+                            <p class="brick__text">
+                            Каждый старшеклассник знает, что сила тока измеряется в амперах. В чем измерить?
+                            </p>
+                        </div>
+                        <a href="#" class="clickable"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row padding-lr padding-tb">
+                <div class="col-12">
+                    <div class="brick">
+                        <div class="brick__image">
+                            <amp-img src="http://f1.s.qip.ru/jAMAwieF.jpg" alt="Картинка" width="310" height="200" layout="responsive"></amp-img>
+                            <span class="brick__label-position">
+                                <a href="#i" class="brick__label" title="">Интересное</a>
+                                <br>
+                                <a href="#l" class="brick__label" title="">Жизнь</a>
+                            </span>
+                            <a href="#" class="clickable"></a>
+                        </div>
+                        <div class="brick__content">
+                                <div class="brick__mainLinkWrapper">
+                                    <a href="#" class="brick__mainLink" title="">На главном проспекте установят новые говорящие осановки</a>
+                                    <p class="brick__mainLinkDate">сегодня</p>
+                                </div>
+                                <p class="brick__text">
+                                    Политологи рассуждают о том, к чему в конечном итоге может привести внутрипартийный раскол в ПАРНАС.
+                                </p>
+                        </div>
+                        <a href="#" class="clickable"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row padding-lr padding-tb">
+                <div class="col-6">
+                    <div class="brick">
+                        <div class="brick__image">
+                            <amp-img src="http://molbiol.ru/forums/uploads/a003/b047/post-24502-1338479907.jpg" alt="Картинка" width="310" height="250" layout="responsive"></amp-img>
+                            <span class="brick__label-position">
+                            <a href="#i" class="brick__label" title="">Интересное</a>
+                            <br>
+                            <a href="#l" class="brick__label" title="">Жизнь</a>
+                            </span>
+                            <a href="#" class="clickable"></a>
+                        </div>
+                        <div class="brick__content">
+                            <div class="brick__mainLinkWrapper">
+                            <a href="#" class="brick__mainLink" title="">Известная модель надела паранджу после операции шмоперации</a>
+                            <p class="brick__mainLinkDate">сегодня</p>
+                            </div>
+                            <p class="brick__text">
+                            Главный научный сотрудник лаборатории солнечного ветра ИКИ РАН Олег Вайсберг рассказал.
+                            </p>
+                        </div>
+                        <a href="#" class="clickable"></a>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="brick">
+                        <div class="brick__image">
+                            <amp-img src="http://f1.s.qip.ru/jAMAwieF.jpg" alt="Картинка" width="310" height="250" layout="responsive"></amp-img>
+                            <a href="#31" class="brick__label brick__label-position" title="">здоровье</a>
+                            <a href="#" class="clickable"></a>
+                        </div>
+                        <div class="brick__content">
+                            <div class="brick__mainLinkWrapper">
+                            <a href="#" class="brick__mainLink" title="">Исследование: где в Москве опаснее безопаснее всего жить</a>
+                            <p class="brick__mainLinkDate">сегодня</p>
+                            </div>
+                            <p class="brick__text">
+                            Каждый старшеклассник знает, что сила тока измеряется в амперах. В чем измерить?
+                            </p>
+                        </div>
+                        <a href="#" class="clickable"></a>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </section>
+
+        <footer class="footer" itemscope="" itemtype="http://schema.org/WPFooter">
+            <section class="footerLinks padding-lr">
+                <p>Ридус в соцсетях</p>
+                <ul class="socials">
+                    <li class="socialNetwork__item">
+                        <a class="socialNetwork__link fa fa-facebook" href="#" title=""></a>
+                    </li>
+                    <li class="socialNetwork__item">
+                        <a class="socialNetwork__link fa fa-vk" href="#" title=""></a>
+                    </li>
+                    <li class="socialNetwork__item">
+                        <a class="socialNetwork__link fa fa-google-plus" href="#" title=""></a>
+                    </li>
+                    <li class="socialNetwork__item">
+                        <a class="socialNetwork__link fa fa-twitter" href="#" title=""></a>
+                    </li>
+                    <li class="socialNetwork__item">
+                        <a class="socialNetwork__link fa fa-odnoklassniki" href="#" title=""></a>
+                    </li>
+                    <li class="socialNetwork__item">
+                        <a class="socialNetwork__link fa fa-rss" href="#" title=""></a>
+                    </li>
+                </ul>
+
+            </section>
+            <section class="footerSubscribe padding-lr">
+                <p>Ежедневная рассылка <br>лучших новостей от Ридуса</p>
+                <form>
+                    <div class="footerSubscribe__form">
+                        <input class="footerSubscribe__input" type="text" placeholder="Введите e-mail">
+                        <a class="yellowButton" href="" title="">
+                            подписаться
+                            <i class="corner"><!-- corner --></i>
+                        </a>
+                        <!--button class="footerSubscribe__button" type="submit">подписаться</button-->
+                    </div>
+                </form>
+                <a class="footerSubscribe__siteLink" href="#">
+                    <i class="fa fa-globe"></i>
+                    Перейти на полную версию сайта
+                </a>
+            </section>
+            <section class="footerCopy padding-lr">
+                <p class="footerCopy__text">© 2011-2016 Ридус. Все права защищены.</p>
+                <i class="footerCopy__18plus"></i>
+            </section>
+        </footer>
+
+    </div>
+
+</body>
+</html>
