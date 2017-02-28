@@ -22,6 +22,7 @@
     <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
     <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <style amp-custom>
         /* any custom styles go here. */
@@ -110,6 +111,56 @@
             padding: 0;
             border: 0;
         }
+
+        /*FONT*/
+        /* Font Awesome */
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('./../fonts/fontawesome-webfont.eot');
+            src: url('./../fonts/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), url('./../fonts/fontawesome-webfont.woff?v=4.0.3') format('woff'), url('./../fonts/fontawesome-webfont.ttf?v=4.0.3') format('truetype'), url('./../fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        .fa {
+            display: inline-block;
+            font-family: FontAwesome;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .fa-facebook:before {
+            content: "\f09a";
+        }
+        .fa-twitter:before {
+            content: "\f099";
+        }
+        .fa-google-plus:before {
+            content: "\f0d5";
+        }
+        .fa-linkedin:before {
+            content: "\f0e1";
+        }
+        .fa-instagram:before {
+            content: "\f16d";
+        }
+        .fa-dribbble:before {
+            content: "\f17d";
+        }
+        .fa-skype:before {
+            content: "\f17e";
+        }
+        .fa-vk:before {
+            content: "\f189";
+        }
+        .fa-odnoklassniki:before {
+            content: "\f263";
+        }
+        .fa-feed:before, .fa-rss:before {
+            content: "\f09e";
+        }
+        /* /Font Awesome */
         /*----------------COMMON------------- */
         .page {
             padding-top: 44px;
@@ -189,6 +240,9 @@
             color: #fff;
             background: transparent;
         }
+        .footer .socials .socialNetwork__item {
+            margin-right: 6px;
+        }
 
         input[type="text"], input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="url"] {
             width: 100%;
@@ -245,6 +299,27 @@
             color: #fff;
             font: 100 14px 'Roboto', sans-serif;
         }
+        .socials .socialNetwork__link {
+            display: inline-block;
+            height: 36px;
+            width: 36px;
+            margin-right: 3px;
+            margin-bottom: 3px;
+            vertical-align: middle;
+            border-radius: 50%;
+            background: #2a3436;
+            transition: color .2s ease-in-out;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+        }
+        .socials .socialNetwork__link:before {
+            font-size: 20px;
+            line-height: 36px;
+        }
+        .fa-facebook-f:before, .fa-facebook:before {
+            content: "\f09a";
+        }
         .fa {
             display: inline-block;
             font: normal normal normal 14px/1 FontAwesome;
@@ -253,6 +328,7 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
+        
         .fa-globe:before {
             content: "\f0ac";
         }
@@ -277,6 +353,15 @@
             width: 22px;
             height: 22px;
             background-position: 0px 0px;
+        }
+        .bgColor_deepblue .brick__mainLink, .bgColor_deepblue .brick__mainLinkDate, .bgColor_red .brick__mainLink, .bgColor_red .brick__mainLinkDate, .bgColor_gunmetal .brick__mainLink, .bgColor_gunmetal .brick__mainLinkDate, .bgColor_dark .brick__mainLink, .bgColor_dark .brick__mainLinkDate {
+            color: #e1e4e7;
+        }
+        .bgColor_red, .bgColor_red .section-title {
+            background: #7a1800;
+        }
+        .bgColor_gunmetal, .bgColor_gunmetal .section-title {
+            background: #2b3336;
         }
         /*----------------------END COMMON------------------------*/
         .header {
@@ -690,7 +775,7 @@
             position: absolute;
         }
         .burgerButton {
-            /*position: fixed;*/
+            position: absolute;
             right: 0;
             top: 3px;
             z-index: 666;
@@ -733,8 +818,8 @@
 
         /*SIDE BAR*/
         .nav {
-            width: 250px;
-            height: 100%;
+            max-width: 250px;
+            /*height: 100%;*/
             padding: 10px 15px 15px 15px;
             background: #445560;
             transition: all 200ms ease-out;
@@ -867,6 +952,78 @@
 }
 
         /*END SIDEBAR*/
+
+        /*ACCORDION*/
+        .bgColor_deepblue, .bgColor_deepblue .section-title {
+            background: #677a87;
+        }
+        .accordion-section-title {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-pack: center;
+            justify-content: center;
+            padding: 10px 0;
+            font: bold 18px 'Roboto Slab', serif;
+            text-transform: uppercase;
+            color: #fff;
+            border: 0;
+        }
+        .alasliderimage {
+            position: relative;
+        }
+        .alasliderimage__image {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -ms-flex-align: center;
+            align-items: center;
+            width: 100%;
+            height: 260px;
+            overflow: hidden;
+        }
+        .alasliderimage__text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 0 15px 15px;
+            background: -moz-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+            background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+            background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+        }
+        .alasliderimage__text p {
+            margin-bottom: 5px;
+            font: bold 26px/28px 'Roboto Slab', serif;
+            color: #fff;
+        }
+        .accordion-section-title__flip {
+            position: relative;
+            width: 30px;
+        }
+        .accordion-section-title__flip:before {
+            position: absolute;
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-top: 2px solid #fff;
+            border-left: 2px solid #fff;
+            left: 15px;
+            top: 3px;
+            transform: rotate(-135deg);
+        }
+        .accordion [expanded] .accordion-section-title__flip:before {
+            top: 10px;
+            transform: rotate(45deg);
+        }
+        
+        /*END ACCORDION*/
+        .col-6 .brick .brick__mainLinkDate, .col-6 .brick .brick__text {
+            display: none;
+        }
+        .bgColor_deepblue .brick__text, .bgColor_red .brick__text, .bgColor_gunmetal .brick__text, .bgColor_dark .brick__text {
+            color: #d3d3d3;
+        }
     </style>
 </head>
 
@@ -996,6 +1153,13 @@
         <section class="bgColor_white">
             <div class="section-title">
                 Картина дня
+                <a href="#" class="burgerButton disable_scrolling" on="tap:sidebar.open">
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </a>
             </div>
 
             <amp-carousel layout="responsive" height="200" width="300" type="slides" loop autoplay delay=4000>
@@ -1082,7 +1246,7 @@
                                 35
                             </span>
                             <span class="countersBlock__item countersBlock__item-show view_count3">
-                                3812
+                                3
                             </span>
                         </div>
                         <a href="#" class="clickable"></a>
@@ -1112,7 +1276,7 @@
                                 35
                             </span>
                             <span class="countersBlock__item countersBlock__item-show view_count3">
-                                3812
+                                3
                             </span>
                         </div>
                         <a href="#" class="clickable"></a>
@@ -1224,7 +1388,7 @@
                                 35
                             </span>
                             <span class="countersBlock__item countersBlock__item-show view_count3">
-                                3812
+                                3
                             </span>
                         </div>
                         <a href="#" class="clickable"></a>
@@ -1261,7 +1425,7 @@
                                 35
                             </span>
                             <span class="countersBlock__item countersBlock__item-show view_count3">
-                                3812
+                                3
                             </span>
                         </div>
                         <a href="#" class="clickable"></a>
@@ -1291,7 +1455,7 @@
                                 35
                             </span>
                             <span class="countersBlock__item countersBlock__item-show view_count3">
-                                3812
+                                3
                             </span>
                         </div>
                         <a href="#" class="clickable"></a>
@@ -1328,7 +1492,7 @@
                                 35
                             </span>
                             <span class="countersBlock__item countersBlock__item-show view_count3">
-                                3812
+                                3
                             </span>
                         </div>
                         <a href="#" class="clickable"></a>
@@ -1365,7 +1529,7 @@
                                 35
                             </span>
                             <span class="countersBlock__item countersBlock__item-show view_count3">
-                                3812
+                                3
                             </span>
                         </div>
                         <a href="#" class="clickable"></a>
@@ -1395,7 +1559,7 @@
                                 35
                             </span>
                             <span class="countersBlock__item countersBlock__item-show view_count3">
-                                3812
+                                3
                             </span>
                         </div>
                         <a href="#" class="clickable"></a>
@@ -1406,6 +1570,615 @@
 
 
         </section>
+
+        <amp-accordion class="accordion"> 
+            <section class="bgColor_deepblue technologies">
+                <header class="accordion-section-title section-title">
+                    Технологии
+                    <i class="accordion-section-title__flip"></i>
+                    </header>
+                <div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="alasliderimage">
+                                <a href="#" class="alasliderimage__image" title="">
+                                    <amp-img src="https://www.ridus.ru/images/2016/3/9/374241/in_article_6e0fbfdc98.jpg" width="300" height="200" layout="fill" alt="Border Collie"></amp-img>
+                                </a>
+                                <div class="alasliderimage__text">
+                                    <a href="#life" class="brick__label" title="">жизнь</a>
+                                    <p>Олимпийский робото-футбол</p>
+                                    <div class="countersBlock white">
+                                        <span class="countersBlock__item countersBlock__item-like view_count1">
+                                            0
+                                        </span>
+                                        <span class="countersBlock__item countersBlock__item-comment view_count2">
+                                            2
+                                        </span>
+                                        <span class="countersBlock__item countersBlock__item-show view_count3">
+                                            408
+                                        </span>
+                                    </div>
+                                    <!--<a href="#" class="clickable"></a>-->
+                                </div>
+                                <!--<a href="#" class="clickable"></a>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row padding-lr padding-tb">
+                        <div class="col-6">
+                            <div class="brick">
+                                <div class="brick__image">
+                                    <amp-img src="http://molbiol.ru/forums/uploads/a003/b047/post-24502-1338479907.jpg" alt="Картинка" width="310" height="250" layout="responsive"></amp-img>
+                                    <span class="brick__label-position">
+                                    <a href="#i" class="brick__label" title="">Интересное</a>
+                                    <br>
+                                    <a href="#l" class="brick__label" title="">Жизнь</a>
+                                    </span>
+                                    <a href="#" class="clickable"></a>
+                                </div>
+                                <div class="brick__content">
+                                    <div class="brick__mainLinkWrapper">
+                                    <a href="#" class="brick__mainLink" title="">Известная модель надела паранджу после операции шмоперации</a>
+                                    <p class="brick__mainLinkDate">сегодня</p>
+                                    </div>
+                                    <p class="brick__text">
+                                    Главный научный сотрудник лаборатории солнечного ветра ИКИ РАН Олег Вайсберг рассказал.
+                                    </p>
+                                </div>
+                                <div class="countersBlock black">
+                                    <span class="countersBlock__item countersBlock__item-like view_count1">
+                                        120
+                                    </span>
+                                    <span class="countersBlock__item countersBlock__item-comment view_count2">
+                                        35
+                                    </span>
+                                    <span class="countersBlock__item countersBlock__item-show view_count3">
+                                        3
+                                    </span>
+                                </div>
+                                <a href="#" class="clickable"></a>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="brick">
+                                <div class="brick__image">
+                                    <amp-img src="http://f1.s.qip.ru/jAMAwieF.jpg" alt="Картинка" width="310" height="250" layout="responsive"></amp-img>
+                                    <a href="#31" class="brick__label brick__label-position" title="">здоровье</a>
+                                    <a href="#" class="clickable"></a>
+                                </div>
+                                <div class="brick__content">
+                                    <div class="brick__mainLinkWrapper">
+                                    <a href="#" class="brick__mainLink" title="">Исследование: где в Москве опаснее безопаснее всего жить</a>
+                                    <p class="brick__mainLinkDate">сегодня</p>
+                                    </div>
+                                    <p class="brick__text">
+                                    Каждый старшеклассник знает, что сила тока измеряется в амперах. В чем измерить?
+                                    </p>
+                                </div>
+                                <div class="countersBlock black">
+                                    <span class="countersBlock__item countersBlock__item-like view_count1">
+                                        120
+                                    </span>
+                                    <span class="countersBlock__item countersBlock__item-comment view_count2">
+                                        35
+                                    </span>
+                                    <span class="countersBlock__item countersBlock__item-show view_count3">
+                                        3
+                                    </span>
+                                </div>
+                                <a href="#" class="clickable"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row padding-lr padding-tb">
+                        <div class="col-12">
+                            <div class="brick">
+                                <div class="brick__image">
+                                    <amp-img src="http://f1.s.qip.ru/jAMAwieF.jpg" alt="Картинка" width="310" height="200" layout="responsive"></amp-img>
+                                    <span class="brick__label-position">
+                                        <a href="#i" class="brick__label" title="">Интересное</a>
+                                        <br>
+                                        <a href="#l" class="brick__label" title="">Жизнь</a>
+                                    </span>
+                                    <a href="#" class="clickable"></a>
+                                </div>
+                                <div class="brick__content">
+                                        <div class="brick__mainLinkWrapper">
+                                            <a href="#" class="brick__mainLink" title="">На главном проспекте установят новые говорящие осановки</a>
+                                            <p class="brick__mainLinkDate">сегодня</p>
+                                        </div>
+                                        <p class="brick__text">
+                                            Политологи рассуждают о том, к чему в конечном итоге может привести внутрипартийный раскол в ПАРНАС.
+                                        </p>
+                                </div>
+                                <div class="countersBlock black">
+                                    <span class="countersBlock__item countersBlock__item-like view_count1">
+                                        120
+                                    </span>
+                                    <span class="countersBlock__item countersBlock__item-comment view_count2">
+                                        35
+                                    </span>
+                                    <span class="countersBlock__item countersBlock__item-show view_count3">
+                                        3
+                                    </span>
+                                </div>
+                                <a href="#" class="clickable"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row padding-lr padding-tb">
+                        <div class="col-6">
+                            <div class="brick">
+                                <div class="brick__image">
+                                    <amp-img src="http://molbiol.ru/forums/uploads/a003/b047/post-24502-1338479907.jpg" alt="Картинка" width="310" height="250" layout="responsive"></amp-img>
+                                    <span class="brick__label-position">
+                                    <a href="#i" class="brick__label" title="">Интересное</a>
+                                    <br>
+                                    <a href="#l" class="brick__label" title="">Жизнь</a>
+                                    </span>
+                                    <a href="#" class="clickable"></a>
+                                </div>
+                                <div class="brick__content">
+                                    <div class="brick__mainLinkWrapper">
+                                    <a href="#" class="brick__mainLink" title="">Известная модель надела паранджу после операции шмоперации</a>
+                                    <p class="brick__mainLinkDate">сегодня</p>
+                                    </div>
+                                    <p class="brick__text">
+                                    Главный научный сотрудник лаборатории солнечного ветра ИКИ РАН Олег Вайсберг рассказал.
+                                    </p>
+                                </div>
+                                <div class="countersBlock black">
+                                    <span class="countersBlock__item countersBlock__item-like view_count1">
+                                        120
+                                    </span>
+                                    <span class="countersBlock__item countersBlock__item-comment view_count2">
+                                        35
+                                    </span>
+                                    <span class="countersBlock__item countersBlock__item-show view_count3">
+                                        3
+                                    </span>
+                                </div>
+                                <a href="#" class="clickable"></a>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="brick">
+                                <div class="brick__image">
+                                    <amp-img src="http://f1.s.qip.ru/jAMAwieF.jpg" alt="Картинка" width="310" height="250" layout="responsive"></amp-img>
+                                    <a href="#31" class="brick__label brick__label-position" title="">здоровье</a>
+                                    <a href="#" class="clickable"></a>
+                                </div>
+                                <div class="brick__content">
+                                    <div class="brick__mainLinkWrapper">
+                                    <a href="#" class="brick__mainLink" title="">Исследование: где в Москве опаснее безопаснее всего жить</a>
+                                    <p class="brick__mainLinkDate">сегодня</p>
+                                    </div>
+                                    <p class="brick__text">
+                                    Каждый старшеклассник знает, что сила тока измеряется в амперах. В чем измерить?
+                                    </p>
+                                </div>
+                                <div class="countersBlock black">
+                                    <span class="countersBlock__item countersBlock__item-like view_count1">
+                                        120
+                                    </span>
+                                    <span class="countersBlock__item countersBlock__item-comment view_count2">
+                                        35
+                                    </span>
+                                    <span class="countersBlock__item countersBlock__item-show view_count3">
+                                        3
+                                    </span>
+                                </div>
+                                <a href="#" class="clickable"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="bgColor_red technologies">
+                <header class="accordion-section-title section-title">
+                    Украинский кризис
+                    <i class="accordion-section-title__flip"></i>
+                    </header>
+                <div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="alasliderimage">
+                                <a href="#" class="alasliderimage__image" title="">
+                                    <amp-img src="https://www.ridus.ru/images/2016/3/9/374241/in_article_6e0fbfdc98.jpg" width="300" height="200" layout="fill" alt="Border Collie"></amp-img>
+                                </a>
+                                <div class="alasliderimage__text">
+                                    <a href="#life" class="brick__label" title="">жизнь</a>
+                                    <p>Олимпийский робото-футбол</p>
+                                    <div class="countersBlock white">
+                                        <span class="countersBlock__item countersBlock__item-like view_count1">
+                                            0
+                                        </span>
+                                        <span class="countersBlock__item countersBlock__item-comment view_count2">
+                                            2
+                                        </span>
+                                        <span class="countersBlock__item countersBlock__item-show view_count3">
+                                            408
+                                        </span>
+                                    </div>
+                                    <!--<a href="#" class="clickable"></a>-->
+                                </div>
+                                <!--<a href="#" class="clickable"></a>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row padding-lr padding-tb">
+                        <div class="col-6">
+                            <div class="brick">
+                                <div class="brick__image">
+                                    <amp-img src="http://molbiol.ru/forums/uploads/a003/b047/post-24502-1338479907.jpg" alt="Картинка" width="310" height="250" layout="responsive"></amp-img>
+                                    <span class="brick__label-position">
+                                    <a href="#i" class="brick__label" title="">Интересное</a>
+                                    <br>
+                                    <a href="#l" class="brick__label" title="">Жизнь</a>
+                                    </span>
+                                    <a href="#" class="clickable"></a>
+                                </div>
+                                <div class="brick__content">
+                                    <div class="brick__mainLinkWrapper">
+                                    <a href="#" class="brick__mainLink" title="">Известная модель надела паранджу после операции шмоперации</a>
+                                    <p class="brick__mainLinkDate">сегодня</p>
+                                    </div>
+                                    <p class="brick__text">
+                                    Главный научный сотрудник лаборатории солнечного ветра ИКИ РАН Олег Вайсберг рассказал.
+                                    </p>
+                                </div>
+                                <div class="countersBlock black">
+                                    <span class="countersBlock__item countersBlock__item-like view_count1">
+                                        120
+                                    </span>
+                                    <span class="countersBlock__item countersBlock__item-comment view_count2">
+                                        35
+                                    </span>
+                                    <span class="countersBlock__item countersBlock__item-show view_count3">
+                                        3
+                                    </span>
+                                </div>
+                                <a href="#" class="clickable"></a>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="brick">
+                                <div class="brick__image">
+                                    <amp-img src="http://f1.s.qip.ru/jAMAwieF.jpg" alt="Картинка" width="310" height="250" layout="responsive"></amp-img>
+                                    <a href="#31" class="brick__label brick__label-position" title="">здоровье</a>
+                                    <a href="#" class="clickable"></a>
+                                </div>
+                                <div class="brick__content">
+                                    <div class="brick__mainLinkWrapper">
+                                    <a href="#" class="brick__mainLink" title="">Исследование: где в Москве опаснее безопаснее всего жить</a>
+                                    <p class="brick__mainLinkDate">сегодня</p>
+                                    </div>
+                                    <p class="brick__text">
+                                    Каждый старшеклассник знает, что сила тока измеряется в амперах. В чем измерить?
+                                    </p>
+                                </div>
+                                <div class="countersBlock black">
+                                    <span class="countersBlock__item countersBlock__item-like view_count1">
+                                        120
+                                    </span>
+                                    <span class="countersBlock__item countersBlock__item-comment view_count2">
+                                        35
+                                    </span>
+                                    <span class="countersBlock__item countersBlock__item-show view_count3">
+                                        3
+                                    </span>
+                                </div>
+                                <a href="#" class="clickable"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row padding-lr padding-tb">
+                        <div class="col-12">
+                            <div class="brick">
+                                <div class="brick__image">
+                                    <amp-img src="http://f1.s.qip.ru/jAMAwieF.jpg" alt="Картинка" width="310" height="200" layout="responsive"></amp-img>
+                                    <span class="brick__label-position">
+                                        <a href="#i" class="brick__label" title="">Интересное</a>
+                                        <br>
+                                        <a href="#l" class="brick__label" title="">Жизнь</a>
+                                    </span>
+                                    <a href="#" class="clickable"></a>
+                                </div>
+                                <div class="brick__content">
+                                        <div class="brick__mainLinkWrapper">
+                                            <a href="#" class="brick__mainLink" title="">На главном проспекте установят новые говорящие осановки</a>
+                                            <p class="brick__mainLinkDate">сегодня</p>
+                                        </div>
+                                        <p class="brick__text">
+                                            Политологи рассуждают о том, к чему в конечном итоге может привести внутрипартийный раскол в ПАРНАС.
+                                        </p>
+                                </div>
+                                <div class="countersBlock black">
+                                    <span class="countersBlock__item countersBlock__item-like view_count1">
+                                        120
+                                    </span>
+                                    <span class="countersBlock__item countersBlock__item-comment view_count2">
+                                        35
+                                    </span>
+                                    <span class="countersBlock__item countersBlock__item-show view_count3">
+                                        3
+                                    </span>
+                                </div>
+                                <a href="#" class="clickable"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row padding-lr padding-tb">
+                        <div class="col-6">
+                            <div class="brick">
+                                <div class="brick__image">
+                                    <amp-img src="http://molbiol.ru/forums/uploads/a003/b047/post-24502-1338479907.jpg" alt="Картинка" width="310" height="250" layout="responsive"></amp-img>
+                                    <span class="brick__label-position">
+                                    <a href="#i" class="brick__label" title="">Интересное</a>
+                                    <br>
+                                    <a href="#l" class="brick__label" title="">Жизнь</a>
+                                    </span>
+                                    <a href="#" class="clickable"></a>
+                                </div>
+                                <div class="brick__content">
+                                    <div class="brick__mainLinkWrapper">
+                                    <a href="#" class="brick__mainLink" title="">Известная модель надела паранджу после операции шмоперации</a>
+                                    <p class="brick__mainLinkDate">сегодня</p>
+                                    </div>
+                                    <p class="brick__text">
+                                    Главный научный сотрудник лаборатории солнечного ветра ИКИ РАН Олег Вайсберг рассказал.
+                                    </p>
+                                </div>
+                                <div class="countersBlock black">
+                                    <span class="countersBlock__item countersBlock__item-like view_count1">
+                                        120
+                                    </span>
+                                    <span class="countersBlock__item countersBlock__item-comment view_count2">
+                                        35
+                                    </span>
+                                    <span class="countersBlock__item countersBlock__item-show view_count3">
+                                        3
+                                    </span>
+                                </div>
+                                <a href="#" class="clickable"></a>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="brick">
+                                <div class="brick__image">
+                                    <amp-img src="http://f1.s.qip.ru/jAMAwieF.jpg" alt="Картинка" width="310" height="250" layout="responsive"></amp-img>
+                                    <a href="#31" class="brick__label brick__label-position" title="">здоровье</a>
+                                    <a href="#" class="clickable"></a>
+                                </div>
+                                <div class="brick__content">
+                                    <div class="brick__mainLinkWrapper">
+                                    <a href="#" class="brick__mainLink" title="">Исследование: где в Москве опаснее безопаснее всего жить</a>
+                                    <p class="brick__mainLinkDate">сегодня</p>
+                                    </div>
+                                    <p class="brick__text">
+                                    Каждый старшеклассник знает, что сила тока измеряется в амперах. В чем измерить?
+                                    </p>
+                                </div>
+                                <div class="countersBlock black">
+                                    <span class="countersBlock__item countersBlock__item-like view_count1">
+                                        120
+                                    </span>
+                                    <span class="countersBlock__item countersBlock__item-comment view_count2">
+                                        35
+                                    </span>
+                                    <span class="countersBlock__item countersBlock__item-show view_count3">
+                                        3
+                                    </span>
+                                </div>
+                                <a href="#" class="clickable"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="bgColor_gunmetal">
+                <header class="accordion-section-title section-title">
+                    Операция в сирии
+                    <i class="accordion-section-title__flip"></i>
+                    </header>
+                <div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="alasliderimage">
+                                <a href="#" class="alasliderimage__image" title="">
+                                    <amp-img src="https://www.ridus.ru/images/2016/3/9/374241/in_article_6e0fbfdc98.jpg" width="300" height="200" layout="fill" alt="Border Collie"></amp-img>
+                                </a>
+                                <div class="alasliderimage__text">
+                                    <a href="#life" class="brick__label" title="">жизнь</a>
+                                    <p>Олимпийский робото-футбол</p>
+                                    <div class="countersBlock white">
+                                        <span class="countersBlock__item countersBlock__item-like view_count1">
+                                            0
+                                        </span>
+                                        <span class="countersBlock__item countersBlock__item-comment view_count2">
+                                            2
+                                        </span>
+                                        <span class="countersBlock__item countersBlock__item-show view_count3">
+                                            408
+                                        </span>
+                                    </div>
+                                    <!--<a href="#" class="clickable"></a>-->
+                                </div>
+                                <!--<a href="#" class="clickable"></a>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row padding-lr padding-tb">
+                        <div class="col-6">
+                            <div class="brick">
+                                <div class="brick__image">
+                                    <amp-img src="http://molbiol.ru/forums/uploads/a003/b047/post-24502-1338479907.jpg" alt="Картинка" width="310" height="250" layout="responsive"></amp-img>
+                                    <span class="brick__label-position">
+                                    <a href="#i" class="brick__label" title="">Интересное</a>
+                                    <br>
+                                    <a href="#l" class="brick__label" title="">Жизнь</a>
+                                    </span>
+                                    <a href="#" class="clickable"></a>
+                                </div>
+                                <div class="brick__content">
+                                    <div class="brick__mainLinkWrapper">
+                                    <a href="#" class="brick__mainLink" title="">Известная модель надела паранджу после операции шмоперации</a>
+                                    <p class="brick__mainLinkDate">сегодня</p>
+                                    </div>
+                                    <p class="brick__text">
+                                    Главный научный сотрудник лаборатории солнечного ветра ИКИ РАН Олег Вайсберг рассказал.
+                                    </p>
+                                </div>
+                                <div class="countersBlock black">
+                                    <span class="countersBlock__item countersBlock__item-like view_count1">
+                                        120
+                                    </span>
+                                    <span class="countersBlock__item countersBlock__item-comment view_count2">
+                                        35
+                                    </span>
+                                    <span class="countersBlock__item countersBlock__item-show view_count3">
+                                        3
+                                    </span>
+                                </div>
+                                <a href="#" class="clickable"></a>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="brick">
+                                <div class="brick__image">
+                                    <amp-img src="http://f1.s.qip.ru/jAMAwieF.jpg" alt="Картинка" width="310" height="250" layout="responsive"></amp-img>
+                                    <a href="#31" class="brick__label brick__label-position" title="">здоровье</a>
+                                    <a href="#" class="clickable"></a>
+                                </div>
+                                <div class="brick__content">
+                                    <div class="brick__mainLinkWrapper">
+                                    <a href="#" class="brick__mainLink" title="">Исследование: где в Москве опаснее безопаснее всего жить</a>
+                                    <p class="brick__mainLinkDate">сегодня</p>
+                                    </div>
+                                    <p class="brick__text">
+                                    Каждый старшеклассник знает, что сила тока измеряется в амперах. В чем измерить?
+                                    </p>
+                                </div>
+                                <div class="countersBlock black">
+                                    <span class="countersBlock__item countersBlock__item-like view_count1">
+                                        120
+                                    </span>
+                                    <span class="countersBlock__item countersBlock__item-comment view_count2">
+                                        35
+                                    </span>
+                                    <span class="countersBlock__item countersBlock__item-show view_count3">
+                                        3
+                                    </span>
+                                </div>
+                                <a href="#" class="clickable"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row padding-lr padding-tb">
+                        <div class="col-12">
+                            <div class="brick">
+                                <div class="brick__image">
+                                    <amp-img src="http://f1.s.qip.ru/jAMAwieF.jpg" alt="Картинка" width="310" height="200" layout="responsive"></amp-img>
+                                    <span class="brick__label-position">
+                                        <a href="#i" class="brick__label" title="">Интересное</a>
+                                        <br>
+                                        <a href="#l" class="brick__label" title="">Жизнь</a>
+                                    </span>
+                                    <a href="#" class="clickable"></a>
+                                </div>
+                                <div class="brick__content">
+                                        <div class="brick__mainLinkWrapper">
+                                            <a href="#" class="brick__mainLink" title="">На главном проспекте установят новые говорящие осановки</a>
+                                            <p class="brick__mainLinkDate">сегодня</p>
+                                        </div>
+                                        <p class="brick__text">
+                                            Политологи рассуждают о том, к чему в конечном итоге может привести внутрипартийный раскол в ПАРНАС.
+                                        </p>
+                                </div>
+                                <div class="countersBlock black">
+                                    <span class="countersBlock__item countersBlock__item-like view_count1">
+                                        120
+                                    </span>
+                                    <span class="countersBlock__item countersBlock__item-comment view_count2">
+                                        35
+                                    </span>
+                                    <span class="countersBlock__item countersBlock__item-show view_count3">
+                                        3
+                                    </span>
+                                </div>
+                                <a href="#" class="clickable"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row padding-lr padding-tb">
+                        <div class="col-6">
+                            <div class="brick">
+                                <div class="brick__image">
+                                    <amp-img src="http://molbiol.ru/forums/uploads/a003/b047/post-24502-1338479907.jpg" alt="Картинка" width="310" height="250" layout="responsive"></amp-img>
+                                    <span class="brick__label-position">
+                                    <a href="#i" class="brick__label" title="">Интересное</a>
+                                    <br>
+                                    <a href="#l" class="brick__label" title="">Жизнь</a>
+                                    </span>
+                                    <a href="#" class="clickable"></a>
+                                </div>
+                                <div class="brick__content">
+                                    <div class="brick__mainLinkWrapper">
+                                    <a href="#" class="brick__mainLink" title="">Известная модель надела паранджу после операции шмоперации</a>
+                                    <p class="brick__mainLinkDate">сегодня</p>
+                                    </div>
+                                    <p class="brick__text">
+                                    Главный научный сотрудник лаборатории солнечного ветра ИКИ РАН Олег Вайсберг рассказал.
+                                    </p>
+                                </div>
+                                <div class="countersBlock black">
+                                    <span class="countersBlock__item countersBlock__item-like view_count1">
+                                        120
+                                    </span>
+                                    <span class="countersBlock__item countersBlock__item-comment view_count2">
+                                        35
+                                    </span>
+                                    <span class="countersBlock__item countersBlock__item-show view_count3">
+                                        3
+                                    </span>
+                                </div>
+                                <a href="#" class="clickable"></a>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="brick">
+                                <div class="brick__image">
+                                    <amp-img src="http://f1.s.qip.ru/jAMAwieF.jpg" alt="Картинка" width="310" height="250" layout="responsive"></amp-img>
+                                    <a href="#31" class="brick__label brick__label-position" title="">здоровье</a>
+                                    <a href="#" class="clickable"></a>
+                                </div>
+                                <div class="brick__content">
+                                    <div class="brick__mainLinkWrapper">
+                                    <a href="#" class="brick__mainLink" title="">Исследование: где в Москве опаснее безопаснее всего жить</a>
+                                    <p class="brick__mainLinkDate">сегодня</p>
+                                    </div>
+                                    <p class="brick__text">
+                                    Каждый старшеклассник знает, что сила тока измеряется в амперах. В чем измерить?
+                                    </p>
+                                </div>
+                                <div class="countersBlock black">
+                                    <span class="countersBlock__item countersBlock__item-like view_count1">
+                                        120
+                                    </span>
+                                    <span class="countersBlock__item countersBlock__item-comment view_count2">
+                                        35
+                                    </span>
+                                    <span class="countersBlock__item countersBlock__item-show view_count3">
+                                        3
+                                    </span>
+                                </div>
+                                <a href="#" class="clickable"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </amp-accordion>
 
         <footer class="footer" itemscope="" itemtype="http://schema.org/WPFooter">
             <section class="footerLinks padding-lr">
