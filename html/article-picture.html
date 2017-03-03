@@ -24,7 +24,7 @@
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-    <style amp-custom>
+   <style amp-custom>
         /* any custom styles go here. */
         html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
             margin: 0;
@@ -184,10 +184,16 @@
             margin-bottom: 5px;
             margin-top: 0;
         }
+        .article__container {
+            margin-bottom: 15px;
+        }
         
         .bgColor_white, .bgColor_white .section-title {
             background: #fff;
             color: #000;
+        }
+        .bgColor_blue, .bgColor_blue .section-title {
+            background: #cee0ed;
         }
         .padding-tb {
             padding-top: 10px;
@@ -201,6 +207,7 @@
         .full-width {
             margin-left: -15px;
             margin-right: -15px;
+            margin-bottom: 10px;
         }
         .clearfix:after {
             content: "";
@@ -493,7 +500,10 @@
         }
         .article-tags {
             font-size: 12px;
-            margin-bottom: 30px;
+            /*margin-bottom: 30px;*/
+        }
+        .article-video__section {
+            margin-bottom: 15px;
         }
         .section-title {
             position: relative;
@@ -518,6 +528,39 @@
             color: #000;
             padding-top: 13px;
             padding-bottom: 13px;
+        }
+        .brick__typeLabel {
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 6px 10px 5px;
+            font: 700 9px 'Roboto', sans-serif;
+            text-transform: uppercase;
+            background: #ffd051;
+        }
+        .brick__typeLabel:before {
+            top: 0;
+            border-bottom: 8px solid transparent;
+            border-top: 8px solid #ffd051;
+        }
+        .brick__typeLabel:after, .brick__typeLabel:before {
+            content: "";
+            position: absolute;
+            right: -6px;
+            border-left: 3px solid #ffd051;
+            border-right: 3px solid transparent;
+        }
+        .brick__typeLabel:after {
+            bottom: 0;
+            border-bottom: 8px solid #ffd051;
+            border-top: 8px solid transparent;
+        }
+        .brick__typeLabel:after, .brick__typeLabel:before {
+            content: "";
+            position: absolute;
+            right: -6px;
+            border-left: 3px solid #ffd051;
+            border-right: 3px solid transparent;
         }
         .brick__header-gray {
             background: #eee;
@@ -1047,15 +1090,15 @@
             font-size: 13px;
         }
         .ya-share2__container_size_m .ya-share2__icon {
-            height: 24px;
-            width: 24px;
+            height: 25px;
+            width: 25px;
             background-size: 24px 24px;
         }
         .ya-share2__container_size_m .ya-share2__title {
             line-height: 24px;
         }
         .ya-share2__container_size_m .ya-share2__item {
-            margin: 5px 4px 5px 0;
+            margin: 5px 0 5px 0;
         }
         .ya-share2__container_size_m .ya-share2__item:last-child {
             margin-right: 0;
@@ -1249,7 +1292,37 @@
         .ya-share2__item_service_whatsapp .ya-share2__badge {
             background-color: #65bc54;
         }
+        .socials-article .ya-share2__container_size_m .ya-share2__counter {
+            font-family: 'Roboto', sans-serif;
+            font-size: 13px;
+            font-weight: 300;
+            padding: 0 5px;
+        }
         /*END SOCIAL ARTICLE*/
+        /*ADDITIONAL INFO ACC*/
+        .additional-info_acc {
+            margin-bottom: 20px;
+        }
+        .additional-info_acc header {
+            background: white;
+            border: 0;
+            margin-bottom: 10px;
+        }
+        .additional-info_acc .hide_acc,
+        .additional-info_acc .expand_acc {
+            text-decoration: underline;
+            color: black;
+        }
+        .additional-info_acc .hide_acc {
+            display: none;
+        }
+        .additional-info_acc[expanded] .hide_acc {
+            display: block;
+        }
+        .additional-info_acc[expanded] .expand_acc {
+            display: none;
+        }
+        /*END ADDITIONAL INFO ACC*/
     </style>
 </head>
 
@@ -1359,6 +1432,66 @@
                     </div>
                 </div>
 
+                <div class="socials-article padding-lr @@class">
+                    <!-- реальный счетчик, но он с нулями
+                    СТАВИТЬ ЕГО - убрать display:none; -->
+                    <!--<div class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,gplus,twitter" data-counter="" style="display:none;"></div>-->
+
+                    <!-- для примера инициализированный счетчик
+                    УДАЛИТЬ -->
+                    <div class="ya-share2 ya-share2_inited" id="ya_share_counter">
+                        <div class="ya-share2__container ya-share2__container_size_m">
+                            <ul class="ya-share2__list ya-share2__list_direction_horizontal">
+                                <li class="ya-share2__item ya-share2__item_service_vkontakte">
+                                    <a class="ya-share2__link" href="http://vk.com/share.php?url=https%3A%2F%2Ftech.yandex.ru%2Fshare%2F&amp;title=%D0%91%D0%BB%D0%BE%D0%BA%20%C2%AB%D0%9F%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8%D1%82%D1%8C%D1%81%D1%8F%C2%BB%20%E2%80%94%20%D0%A2%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8%20%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D0%B0&amp;description=&amp;image=&amp;utm_source=share2" rel="nofollow" target="_blank" title="ВКонтакте">
+                                    <span class="ya-share2__badge">
+                                        <span class="ya-share2__icon"></span>
+                                        <span class="ya-share2__counter ya-share2__counter_visible">754</span>
+                                    </span>
+                                        <span class="ya-share2__title">ВКонтакте</span>
+                                    </a>
+                                </li>
+                                <li class="ya-share2__item ya-share2__item_service_facebook">
+                                    <a class="ya-share2__link" href="https://www.facebook.com/sharer.php?src=sp&amp;u=https%3A%2F%2Ftech.yandex.ru%2Fshare%2F&amp;utm_source=share2" rel="nofollow" target="_blank" title="Facebook">
+                                    <span class="ya-share2__badge">
+                                        <span class="ya-share2__icon"></span>
+                                        <span class="ya-share2__counter ya-share2__counter_visible">346</span>
+                                    </span>
+                                        <span class="ya-share2__title">Facebook</span>
+                                    </a>
+                                </li>
+                                <li class="ya-share2__item ya-share2__item_service_odnoklassniki">
+                                    <a class="ya-share2__link" href="https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&amp;st.shareUrl=https%3A%2F%2Ftech.yandex.ru%2Fshare%2F&amp;utm_source=share2" rel="nofollow" target="_blank" title="Одноклассники">
+                                    <span class="ya-share2__badge">
+                                        <span class="ya-share2__icon"></span>
+                                        <span class="ya-share2__counter ya-share2__counter_visible">289</span>
+                                    </span>
+                                        <span class="ya-share2__title">Одноклассники</span>
+                                    </a>
+                                </li>
+                                <li class="ya-share2__item ya-share2__item_service_gplus">
+                                    <a class="ya-share2__link" href="https://plus.google.com/share?url=https%3A%2F%2Ftech.yandex.ru%2Fshare%2F&amp;utm_source=share2" rel="nofollow" target="_blank" title="Google+">
+                                    <span class="ya-share2__badge">
+                                        <span class="ya-share2__icon"></span>
+                                        <span class="ya-share2__counter ya-share2__counter_visible">266</span>
+                                    </span>
+                                        <span class="ya-share2__title">Google+</span>
+                                    </a>
+                                </li>
+                                <li class="ya-share2__item ya-share2__item_service_twitter">
+                                    <a class="ya-share2__link" href="https://twitter.com/intent/tweet?text=%D0%91%D0%BB%D0%BE%D0%BA%20%C2%AB%D0%9F%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8%D1%82%D1%8C%D1%81%D1%8F%C2%BB%20%E2%80%94%20%D0%A2%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8%20%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D0%B0&amp;url=https%3A%2F%2Ftech.yandex.ru%2Fshare%2F&amp;utm_source=share2" rel="nofollow" target="_blank" title="Twitter">
+                                    <span class="ya-share2__badge">
+                                        <span class="ya-share2__icon"></span>
+                                    </span>
+                                        <span class="ya-share2__title">Twitter</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!--<iframe class="ya-share2__iframe" src="https://yastatic.net/share2/v-1.6.0/frame.html?url=https%3A%2F%2Ftech.yandex.ru%2Fshare%2F&amp;services=vkontakte%2Cfacebook%2Codnoklassniki%2Cgplus%2Ctwitter%2Cviber%2Cwhatsapp" style="border: 0; display: none;position: absolute; left: -9999px;"></iframe>-->
+                        </div>
+                    </div>
+                </div>
+
                 <div class="row padding-lr">
                     <div class="col-12">
                         <p class="article-tags">
@@ -1368,67 +1501,6 @@
                             <a href="#" title="">прогнозы</a>,
                             <a href="#" title="">Назарбаев</a>
                         </p>
-                    </div>
-                </div>
-
-
-            </div>
-            <div class="socials-article padding-lr @@class">
-                <!-- реальный счетчик, но он с нулями
-                СТАВИТЬ ЕГО - убрать display:none; -->
-                <!--<div class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,gplus,twitter" data-counter="" style="display:none;"></div>-->
-
-                <!-- для примера инициализированный счетчик
-                УДАЛИТЬ -->
-                <div class="ya-share2 ya-share2_inited" id="ya_share_counter">
-                    <div class="ya-share2__container ya-share2__container_size_m">
-                        <ul class="ya-share2__list ya-share2__list_direction_horizontal">
-                            <li class="ya-share2__item ya-share2__item_service_vkontakte">
-                                <a class="ya-share2__link" href="http://vk.com/share.php?url=https%3A%2F%2Ftech.yandex.ru%2Fshare%2F&amp;title=%D0%91%D0%BB%D0%BE%D0%BA%20%C2%AB%D0%9F%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8%D1%82%D1%8C%D1%81%D1%8F%C2%BB%20%E2%80%94%20%D0%A2%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8%20%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D0%B0&amp;description=&amp;image=&amp;utm_source=share2" rel="nofollow" target="_blank" title="ВКонтакте">
-                                <span class="ya-share2__badge">
-                                    <span class="ya-share2__icon"></span>
-                                    <span class="ya-share2__counter ya-share2__counter_visible">754</span>
-                                </span>
-                                    <span class="ya-share2__title">ВКонтакте</span>
-                                </a>
-                            </li>
-                            <li class="ya-share2__item ya-share2__item_service_facebook">
-                                <a class="ya-share2__link" href="https://www.facebook.com/sharer.php?src=sp&amp;u=https%3A%2F%2Ftech.yandex.ru%2Fshare%2F&amp;utm_source=share2" rel="nofollow" target="_blank" title="Facebook">
-                                <span class="ya-share2__badge">
-                                    <span class="ya-share2__icon"></span>
-                                    <span class="ya-share2__counter ya-share2__counter_visible">346</span>
-                                </span>
-                                    <span class="ya-share2__title">Facebook</span>
-                                </a>
-                            </li>
-                            <li class="ya-share2__item ya-share2__item_service_odnoklassniki">
-                                <a class="ya-share2__link" href="https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&amp;st.shareUrl=https%3A%2F%2Ftech.yandex.ru%2Fshare%2F&amp;utm_source=share2" rel="nofollow" target="_blank" title="Одноклассники">
-                                <span class="ya-share2__badge">
-                                    <span class="ya-share2__icon"></span>
-                                    <span class="ya-share2__counter ya-share2__counter_visible">289</span>
-                                </span>
-                                    <span class="ya-share2__title">Одноклассники</span>
-                                </a>
-                            </li>
-                            <li class="ya-share2__item ya-share2__item_service_gplus">
-                                <a class="ya-share2__link" href="https://plus.google.com/share?url=https%3A%2F%2Ftech.yandex.ru%2Fshare%2F&amp;utm_source=share2" rel="nofollow" target="_blank" title="Google+">
-                                <span class="ya-share2__badge">
-                                    <span class="ya-share2__icon"></span>
-                                    <span class="ya-share2__counter ya-share2__counter_visible">266</span>
-                                </span>
-                                    <span class="ya-share2__title">Google+</span>
-                                </a>
-                            </li>
-                            <li class="ya-share2__item ya-share2__item_service_twitter">
-                                <a class="ya-share2__link" href="https://twitter.com/intent/tweet?text=%D0%91%D0%BB%D0%BE%D0%BA%20%C2%AB%D0%9F%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8%D1%82%D1%8C%D1%81%D1%8F%C2%BB%20%E2%80%94%20%D0%A2%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8%20%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D0%B0&amp;url=https%3A%2F%2Ftech.yandex.ru%2Fshare%2F&amp;utm_source=share2" rel="nofollow" target="_blank" title="Twitter">
-                                <span class="ya-share2__badge">
-                                    <span class="ya-share2__icon"></span>
-                                </span>
-                                    <span class="ya-share2__title">Twitter</span>
-                                </a>
-                            </li>
-                        </ul>
-                        <!--<iframe class="ya-share2__iframe" src="https://yastatic.net/share2/v-1.6.0/frame.html?url=https%3A%2F%2Ftech.yandex.ru%2Fshare%2F&amp;services=vkontakte%2Cfacebook%2Codnoklassniki%2Cgplus%2Ctwitter%2Cviber%2Cwhatsapp" style="border: 0; display: none;position: absolute; left: -9999px;"></iframe>-->
                     </div>
                 </div>
             </div>
