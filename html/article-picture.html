@@ -74,7 +74,7 @@
         hr.dashed {
             border-bottom-style: dashed;
             border-bottom-color: #c2c2c2; 
-    }
+        }
         html {
             font-size: 62.5%;
             width: 100%;
@@ -89,7 +89,7 @@
             font-family: 'Roboto', sans-serif;
             width: 100%;
             height: 99.9%;
-            background: #eee;
+            /*background: #eee;*/
             zoom: 1;
             overflow: auto;
             overflow-x: hidden;
@@ -924,32 +924,32 @@
             border-bottom: 1px solid #67757e;
         }
         .photo-upload__button:before, .footer .footerCopy__18plus, .brick__delete__icon, .brick__save__icon, .countersBlock__item-like:after, .countersBlock__item-comment:after, .countersBlock__item-show:after, .countersBlock__item-articles:after, .countersBlock__item-readLater:after, .countersBlock__item-readLater.view_saved:after, .countersBlock.white .countersBlock__item-like:after, .counters-white .countersBlock__item-like:after, .countersBlock.white .countersBlock__item-comment:after, .counters-white .countersBlock__item-comment:after, .countersBlock.white .countersBlock__item-show:after, .counters-white .countersBlock__item-show:after, .countersBlock.white .countersBlock__item-readLater:after, .counters-white .countersBlock__item-readLater:after, .opinion-button-prev, .opinion-button-next, .videosection .label:after, .nav header .header__readLater .circle:before, .nav header .header__loginButton:before, .nav .navSearch__button:before, .likes__button span:before, .save__button-saved:before, .datepicker-bottom__row:after, .photoreports-button-prev, .photoreports-button-next, .read-more:after, .author-popularity .watchers:before, .share__button::before {
-    display: inline-block;
-    background-image: url(../images/sprite.svg);
-    background-size: 631px 607px;
-}
-.nav header .header__readLater .circle:before {
-    content: '';
-    transform: translate(-50%, -51%);
-    margin-top: 50%;
-    margin-left: 50%;
-    width: 34px;
-    height: 34px;
-    background-position: -335px -320px;
-}
-.nav .navSearch__button:before {
-    content: '';
-    width: 20px;
-    height: 20px;
-    background-position: -531px -516px;
-    transition: 0.25s ease-out;
-}
-.nav header .header__loginButton:before {
-    content: '';
-    width: 17px;
-    height: 17px;
-    background-position: -193px -213px;
-}
+            display: inline-block;
+            background-image: url(../images/sprite.svg);
+            background-size: 631px 607px;
+        }
+        .nav header .header__readLater .circle:before {
+            content: '';
+            transform: translate(-50%, -51%);
+            margin-top: 50%;
+            margin-left: 50%;
+            width: 34px;
+            height: 34px;
+            background-position: -335px -320px;
+        }
+        .nav .navSearch__button:before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background-position: -531px -516px;
+            transition: 0.25s ease-out;
+        }
+        .nav header .header__loginButton:before {
+            content: '';
+            width: 17px;
+            height: 17px;
+            background-position: -193px -213px;
+        }
 
         /*END SIDEBAR*/
 
@@ -1024,6 +1024,232 @@
         .bgColor_deepblue .brick__text, .bgColor_red .brick__text, .bgColor_gunmetal .brick__text, .bgColor_dark .brick__text {
             color: #d3d3d3;
         }
+
+        /*SOCIAL ARTICLE*/
+        .socials-article {
+            margin-bottom: 20px;
+        }
+        .ya-share2,
+        .ya-share2 * {
+            line-height: normal;
+        }
+        .ya-share2:link:hover,
+        .ya-share2:visited:hover {
+            color: #000;
+        }
+        .ya-share2 input {
+            color: inherit;
+            font: inherit;
+            margin: 0;
+            line-height: normal;
+        }
+        .ya-share2__container_size_m {
+            font-size: 13px;
+        }
+        .ya-share2__container_size_m .ya-share2__icon {
+            height: 24px;
+            width: 24px;
+            background-size: 24px 24px;
+        }
+        .ya-share2__container_size_m .ya-share2__title {
+            line-height: 24px;
+        }
+        .ya-share2__container_size_m .ya-share2__item {
+            margin: 5px 4px 5px 0;
+        }
+        .ya-share2__container_size_m .ya-share2__item:last-child {
+            margin-right: 0;
+        }
+        .ya-share2__container_size_m .ya-share2__counter {
+            font-size: 12px;
+            line-height: 24px;
+            padding: 0 8px;
+        }
+        .ya-share2__container_size_m .ya-share2__counter:before {
+            margin-left: -8px;
+        }
+        .ya-share2__container_size_m .ya-share2__icon_more:before {
+            font-size: 12px;
+            line-height: 24px;
+        }
+        .ya-share2__container_size_m .ya-share2__popup {
+            padding: 5px 10px;
+        }
+        .ya-share2__container_size_m .ya-share2__popup_direction_bottom {
+            top: 28px;
+        }
+        .ya-share2__container_size_m .ya-share2__popup_direction_top {
+            bottom: 28px;
+        }
+        .ya-share2__container_size_m .ya-share2__input_copy {
+            width: 140px;
+        }
+        .ya-share2__container_size_m .ya-share2__badge + .ya-share2__title {
+            margin-left: 10px;
+        }
+        .ya-share2__list_direction_horizontal > .ya-share2__item {
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        .ya-share2__list_direction_horizontal > .ya-share2__item > .ya-share2__link > .ya-share2__title {
+            display: none;
+        }
+        .ya-share2__list_direction_vertical > .ya-share2__item {
+            display: block;
+            margin-right: 0;
+        }
+        .ya-share2__list_direction_vertical > .ya-share2__item > .ya-share2__link > .ya-share2__badge > .ya-share2__counter {
+            display: none;
+        }
+        .ya-share2__list {
+            display: inline-block;
+            vertical-align: top;
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+        .ya-share2__item {
+            font-family: Arial, sans;
+            display: inline-block;
+        }
+        .ya-share2__item:hover {
+            opacity: 0.9;
+        }
+        .ya-share2__link {
+            display: inline-block;
+            vertical-align: top;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        .ya-share2__badge {
+            display: inline-block;
+            vertical-align: top;
+            border-radius: 2px;
+            color: #fff;
+            overflow: hidden;
+            position: relative;
+        }
+        .ya-share2__icon {
+            display: inline-block;
+            vertical-align: top;
+        }
+        .ya-share2__icon:active {
+            box-shadow: inset 0 2px 0 0 rgba(0, 0, 0, 0.1);
+        }
+        .ya-share2__counter {
+            display: none;
+        }
+        .ya-share2__counter:before {
+            content: "";
+            position: absolute;
+            width: 1px;
+            top: 2px;
+            bottom: 2px;
+            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEX///+nxBvIAAAAAXRSTlMz/za5cAAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=") 0 0 repeat-y;
+        }
+        .ya-share2__counter_visible {
+            display: inline-block;
+        }
+        .ya-share2__title {
+            display: inline-block;
+            color: #000;
+            vertical-align: bottom;
+        }
+        .ya-share2__title:hover {
+            color: #f00;
+        }
+        .ya-share2__item_more {
+            position: relative;
+        }
+        .ya-share2__item_more:hover {
+            opacity: 1;
+        }
+        .ya-share2__icon_more {
+            background-color: #fff;
+            border: 1px solid #cdcdcd;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .ya-share2__icon_more:before {
+            content: '•••';
+            color: #a0a0a0;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            position: absolute;
+            text-align: center;
+        }
+        .ya-share2__popup {
+            position: absolute;
+            display: none;
+            border: 1px solid #e6e6e6;
+            z-index: 9999;
+            background-color: #fff;
+        }
+        .ya-share2__popup_direction_bottom {
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.4);
+        }
+        .ya-share2__popup_direction_top {
+            box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.4);
+        }
+        .ya-share2__popup_list-direction_horizontal {
+            right: 0;
+        }
+        .ya-share2__popup_list-direction_vertical {
+            left: 0;
+        }
+        .ya-share2__popup_visible {
+            display: block;
+        }
+        .ya-share2__popup_clipboard .ya-share2__input_copy,
+        .ya-share2__link_copy {
+            display: none;
+        }
+        .ya-share2__popup_clipboard .ya-share2__link_copy {
+            display: inline-block;
+        }
+        .ya-share2__item_service_facebook .ya-share2__badge {
+            background-color: #3b5998;
+        }
+        .ya-share2__container_size_m .ya-share2__item_service_facebook .ya-share2__icon {
+            background: url(https://yastatic.net/share2/v-1.15.3/png/6e499ec673690f8ce38000d6e3910a1b.png);
+            background: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEzLjQyMyAyMHYtNy4yOThoMi40NjRsLjM2OS0yLjg0NWgtMi44MzJWOC4wNDJjMC0uODI0LjIzLTEuMzg1IDEuNDE3LTEuMzg1aDEuNTE1VjQuMTExQTIwLjI1NSAyMC4yNTUgMCAwIDAgMTQuMTQ4IDRjLTIuMTgzIDAtMy42NzggMS4zMjYtMy42NzggMy43NnYyLjA5N0g4djIuODQ1aDIuNDdWMjBoMi45NTN6IiBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4K), linear-gradient(transparent, transparent);
+        }
+        .ya-share2__item_service_gplus .ya-share2__badge {
+            background-color: #dc4e41;
+        }
+        .ya-share2__container_size_m .ya-share2__item_service_gplus .ya-share2__icon {
+            background: url(https://yastatic.net/share2/v-1.15.3/png/280833b29d4a77b35ba15ddd8cfe1173.png);
+            background: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTkuMDkgMTEuMzY0djEuNzQ1aDIuODg4Yy0uMTE2Ljc1LS44NzMgMi4xOTYtMi44ODcgMi4xOTYtMS43MzggMC0zLjE1Ni0xLjQ0LTMuMTU2LTMuMjE0IDAtMS43NzUgMS40MTgtMy4yMTUgMy4xNTYtMy4yMTUuOTg5IDAgMS42NS40MjIgMi4wMjkuNzg2bDEuMzgyLTEuMzMxQzExLjYxNSA3LjUgMTAuNDY1IDcgOS4wOSA3QTUuMDg3IDUuMDg3IDAgMCAwIDQgMTIuMDlhNS4wODcgNS4wODcgMCAwIDAgNS4wOSA1LjA5MmMyLjk0IDAgNC44ODgtMi4wNjYgNC44ODgtNC45NzUgMC0uMzM0LS4wMzYtLjU4OS0uMDgtLjg0M0g5LjA5MXptMTAuOTEgMGgtMS40NTVWOS45MDloLTEuNDU0djEuNDU1aC0xLjQ1NXYxLjQ1NGgxLjQ1NXYxLjQ1NWgxLjQ1NHYtMS40NTVIMjAiIGZpbGw9IiNGRkYiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==), linear-gradient(transparent, transparent);
+        }
+        .ya-share2__item_service_odnoklassniki .ya-share2__badge {
+            background-color: #eb722e;
+        }
+        .ya-share2__container_size_m .ya-share2__item_service_odnoklassniki .ya-share2__icon {
+            background: url(https://yastatic.net/share2/v-1.15.3/png/bf146c9b625d96aae779be09176605f0.png);
+            background: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0iI0ZGRiIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTEuNjc0IDYuNTM2YTEuNjkgMS42OSAwIDAgMC0xLjY4OCAxLjY4OGMwIC45My43NTcgMS42ODcgMS42ODggMS42ODdhMS42OSAxLjY5IDAgMCAwIDEuNjg4LTEuNjg3IDEuNjkgMS42OSAwIDAgMC0xLjY4OC0xLjY4OHptMCA1Ljc2M2E0LjA4IDQuMDggMCAwIDEtNC4wNzYtNC4wNzUgNC4wOCA0LjA4IDAgMCAxIDQuMDc2LTQuMDc3IDQuMDggNC4wOCAwIDAgMSA0LjA3NyA0LjA3NyA0LjA4IDQuMDggMCAwIDEtNC4wNzcgNC4wNzV6TTEwLjAyNSAxNS42MjRhNy42MzMgNy42MzMgMCAwIDEtMi4zNjctLjk4IDEuMTk0IDEuMTk0IDAgMCAxIDEuMjcyLTIuMDIyIDUuMTc1IDUuMTc1IDAgMCAwIDUuNDg5IDAgMS4xOTQgMS4xOTQgMCAxIDEgMS4yNzIgMi4wMjIgNy42NDcgNy42NDcgMCAwIDEtMi4zNjcuOThsMi4yNzkgMi4yOGExLjE5NCAxLjE5NCAwIDAgMS0xLjY5IDEuNjg4bC0yLjIzOC0yLjI0LTIuMjQgMi4yNGExLjE5MyAxLjE5MyAwIDEgMS0xLjY4OS0xLjY4OWwyLjI3OS0yLjI3OSIvPjwvZz48L3N2Zz4=), linear-gradient(transparent, transparent);
+        }
+        .ya-share2__item_service_twitter .ya-share2__badge {
+            background-color: #00aced;
+        }
+        .ya-share2__container_size_m .ya-share2__item_service_twitter .ya-share2__icon {
+            background: url(https://yastatic.net/share2/v-1.15.3/png/90b4b34825dd269b61ac35ebd478f1cd.png);
+            background: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTIwIDcuNTM5YTYuNTYgNi41NiAwIDAgMS0xLjg4NS41MTcgMy4yOTQgMy4yOTQgMCAwIDAgMS40NDMtMS44MTYgNi41NzUgNi41NzUgMCAwIDEtMi4wODUuNzk2IDMuMjgzIDMuMjgzIDAgMCAwLTUuNTkzIDIuOTk0QTkuMzIgOS4zMiAwIDAgMSA1LjExNCA2LjZhMy4yOCAzLjI4IDAgMCAwIDEuMDE2IDQuMzgyIDMuMjc0IDMuMjc0IDAgMCAxLTEuNDg3LS40MXYuMDQxYTMuMjg1IDMuMjg1IDAgMCAwIDIuNjMzIDMuMjE4IDMuMzA1IDMuMzA1IDAgMCAxLTEuNDgyLjA1NiAzLjI4NiAzLjI4NiAwIDAgMCAzLjA2NiAyLjI4QTYuNTg1IDYuNTg1IDAgMCAxIDQgMTcuNTI0IDkuMjkxIDkuMjkxIDAgMCAwIDkuMDMyIDE5YzYuMDM4IDAgOS4zNC01IDkuMzQtOS4zMzcgMC0uMTQzLS4wMDQtLjI4NS0uMDEtLjQyNUE2LjY3MiA2LjY3MiAwIDAgMCAyMCA3LjUzOHoiIGZpbGw9IiNGRkYiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==), linear-gradient(transparent, transparent);
+        }
+        .ya-share2__item_service_vkontakte .ya-share2__badge {
+            background-color: #48729e;
+        }
+        .ya-share2__container_size_m .ya-share2__item_service_vkontakte .ya-share2__icon {
+            background: url(https://yastatic.net/share2/v-1.15.3/png/e3146797c0f01cc18d47ff9f50ffe4d2.png);
+            background: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEyLjc4NSAxNi4yNDFzLjI4OC0uMDMyLjQzNi0uMTk0Yy4xMzYtLjE0OC4xMzItLjQyNy4xMzItLjQyN3MtLjAyLTEuMzA0LjU3Ni0xLjQ5NmMuNTg4LS4xOSAxLjM0MSAxLjI2IDIuMTQgMS44MTguNjA1LjQyMiAxLjA2NC4zMyAxLjA2NC4zM2wyLjEzNy0uMDNzMS4xMTctLjA3MS41ODctLjk2NGMtLjA0My0uMDczLS4zMDgtLjY2MS0xLjU4OC0xLjg3LTEuMzQtMS4yNjQtMS4xNi0xLjA1OS40NTMtMy4yNDYuOTgzLTEuMzMyIDEuMzc2LTIuMTQ1IDEuMjUzLTIuNDkzLS4xMTctLjMzMi0uODQtLjI0NC0uODQtLjI0NGwtMi40MDYuMDE1cy0uMTc4LS4wMjUtLjMxLjA1NmMtLjEzLjA3OS0uMjEyLjI2Mi0uMjEyLjI2MnMtLjM4MiAxLjAzLS44OSAxLjkwN2MtMS4wNyAxLjg1LTEuNDk5IDEuOTQ4LTEuNjc0IDEuODMyLS40MDctLjI2Ny0uMzA1LTEuMDc1LS4zMDUtMS42NDggMC0xLjc5My4yNjctMi41NC0uNTIxLTIuNzMzLS4yNjItLjA2NS0uNDU0LS4xMDctMS4xMjMtLjExNC0uODU4LS4wMDktMS41ODUuMDAzLTEuOTk2LjIwOC0uMjc0LjEzNi0uNDg1LjQ0LS4zNTYuNDU3LjE1OS4wMjIuNTE5LjA5OS43MS4zNjMuMjQ2LjM0MS4yMzcgMS4xMDcuMjM3IDEuMTA3cy4xNDIgMi4xMS0uMzMgMi4zNzFjLS4zMjUuMTgtLjc3LS4xODctMS43MjUtMS44NjUtLjQ4OS0uODU5LS44NTktMS44MS0uODU5LTEuODFzLS4wNy0uMTc2LS4xOTgtLjI3MmMtLjE1NC0uMTE1LS4zNy0uMTUxLS4zNy0uMTUxbC0yLjI4Ni4wMTVzLS4zNDMuMDEtLjQ2OS4xNjFDMy45NCA3LjcyMSA0LjA0MyA4IDQuMDQzIDhzMS43OSA0LjI1OCAzLjgxNyA2LjQwM2MxLjg1OCAxLjk2NyAzLjk2OCAxLjgzOCAzLjk2OCAxLjgzOGguOTU3eiIgZmlsbD0iI0ZGRiIgZmlsbC1ydWxlPSJldmVub2RkIi8+PC9zdmc+), linear-gradient(transparent, transparent);
+        }
+        .ya-share2__item_service_whatsapp .ya-share2__badge {
+            background-color: #65bc54;
+        }
+        /*END SOCIAL ARTICLE*/
     </style>
 </head>
 
@@ -1031,7 +1257,7 @@
     <div class="page">
         <header class="header header_article" id="header">
             <a href="#" class="header__mainLogo" title="На главную">
-                <amp-img src="./../images/logo.png" class="x1" width="102" height="40" alt="РИДУС"></amp-img>
+                <amp-img src="./../images/logo-2x.png" class="x1" width="102" height="40" alt="РИДУС"></amp-img>
             </a>
             <a href="#" class="burgerButton disable_scrolling" on="tap:sidebar.open">
                 <ul>
@@ -1146,6 +1372,65 @@
                 </div>
 
 
+            </div>
+            <div class="socials-article padding-lr @@class">
+                <!-- реальный счетчик, но он с нулями
+                СТАВИТЬ ЕГО - убрать display:none; -->
+                <!--<div class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,gplus,twitter" data-counter="" style="display:none;"></div>-->
+
+                <!-- для примера инициализированный счетчик
+                УДАЛИТЬ -->
+                <div class="ya-share2 ya-share2_inited" id="ya_share_counter">
+                    <div class="ya-share2__container ya-share2__container_size_m">
+                        <ul class="ya-share2__list ya-share2__list_direction_horizontal">
+                            <li class="ya-share2__item ya-share2__item_service_vkontakte">
+                                <a class="ya-share2__link" href="http://vk.com/share.php?url=https%3A%2F%2Ftech.yandex.ru%2Fshare%2F&amp;title=%D0%91%D0%BB%D0%BE%D0%BA%20%C2%AB%D0%9F%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8%D1%82%D1%8C%D1%81%D1%8F%C2%BB%20%E2%80%94%20%D0%A2%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8%20%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D0%B0&amp;description=&amp;image=&amp;utm_source=share2" rel="nofollow" target="_blank" title="ВКонтакте">
+                                <span class="ya-share2__badge">
+                                    <span class="ya-share2__icon"></span>
+                                    <span class="ya-share2__counter ya-share2__counter_visible">754</span>
+                                </span>
+                                    <span class="ya-share2__title">ВКонтакте</span>
+                                </a>
+                            </li>
+                            <li class="ya-share2__item ya-share2__item_service_facebook">
+                                <a class="ya-share2__link" href="https://www.facebook.com/sharer.php?src=sp&amp;u=https%3A%2F%2Ftech.yandex.ru%2Fshare%2F&amp;utm_source=share2" rel="nofollow" target="_blank" title="Facebook">
+                                <span class="ya-share2__badge">
+                                    <span class="ya-share2__icon"></span>
+                                    <span class="ya-share2__counter ya-share2__counter_visible">346</span>
+                                </span>
+                                    <span class="ya-share2__title">Facebook</span>
+                                </a>
+                            </li>
+                            <li class="ya-share2__item ya-share2__item_service_odnoklassniki">
+                                <a class="ya-share2__link" href="https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&amp;st.shareUrl=https%3A%2F%2Ftech.yandex.ru%2Fshare%2F&amp;utm_source=share2" rel="nofollow" target="_blank" title="Одноклассники">
+                                <span class="ya-share2__badge">
+                                    <span class="ya-share2__icon"></span>
+                                    <span class="ya-share2__counter ya-share2__counter_visible">289</span>
+                                </span>
+                                    <span class="ya-share2__title">Одноклассники</span>
+                                </a>
+                            </li>
+                            <li class="ya-share2__item ya-share2__item_service_gplus">
+                                <a class="ya-share2__link" href="https://plus.google.com/share?url=https%3A%2F%2Ftech.yandex.ru%2Fshare%2F&amp;utm_source=share2" rel="nofollow" target="_blank" title="Google+">
+                                <span class="ya-share2__badge">
+                                    <span class="ya-share2__icon"></span>
+                                    <span class="ya-share2__counter ya-share2__counter_visible">266</span>
+                                </span>
+                                    <span class="ya-share2__title">Google+</span>
+                                </a>
+                            </li>
+                            <li class="ya-share2__item ya-share2__item_service_twitter">
+                                <a class="ya-share2__link" href="https://twitter.com/intent/tweet?text=%D0%91%D0%BB%D0%BE%D0%BA%20%C2%AB%D0%9F%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8%D1%82%D1%8C%D1%81%D1%8F%C2%BB%20%E2%80%94%20%D0%A2%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8%20%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D0%B0&amp;url=https%3A%2F%2Ftech.yandex.ru%2Fshare%2F&amp;utm_source=share2" rel="nofollow" target="_blank" title="Twitter">
+                                <span class="ya-share2__badge">
+                                    <span class="ya-share2__icon"></span>
+                                </span>
+                                    <span class="ya-share2__title">Twitter</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!--<iframe class="ya-share2__iframe" src="https://yastatic.net/share2/v-1.6.0/frame.html?url=https%3A%2F%2Ftech.yandex.ru%2Fshare%2F&amp;services=vkontakte%2Cfacebook%2Codnoklassniki%2Cgplus%2Ctwitter%2Cviber%2Cwhatsapp" style="border: 0; display: none;position: absolute; left: -9999px;"></iframe>-->
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -2234,7 +2519,8 @@
             <div class="nav scrollable enable_scrolling">
                 <header>
                     <a href="index3.html" class="header__logo" title="На главную">
-                        <amp-img src="./../images/logo.png" class="x1" width="102" height="40" alt="РИДУС"></amp-img>
+                        <!--<amp-img src="./../images/logo.png" class="x1" width="102" height="40" alt="РИДУС"></amp-img>-->
+                        <amp-img src="./../images/logo-2x.png" class="x1" width="102" height="40" alt="РИДУС"></amp-img>
                     </a>
                     <a href="./my-saved-articles.html" class="header__readLater">
                         <span class="circle"></span>

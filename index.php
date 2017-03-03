@@ -21,5 +21,6 @@
   </head>
   <body>
     <a href="./html/article-picture.html">article-picture.html</a>
+    <a href="./html/article-video.html">article-video.html</a>
   </body>
 </html>
