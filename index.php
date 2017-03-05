@@ -21,8 +21,12 @@
   </head>
   <body>
     <ul>
+      <li><a href="./html/article-live-comments.html">article-live-comments.html</a></li>
       <li><a href="./html/article-picture.html">article-picture.html</a></li>
       <li><a href="./html/article-video.html">article-video.html</a></li>
+      <li><a href="./html/article-whitetext.html">article-whitetext.html</a></li>
+      <li><a href="./html/author-article.html">author-article.html</a></li>
+      <li><a href="./html/news-white.html">news-white.html</a></li>
     </ul>
   </body>
 </html>
