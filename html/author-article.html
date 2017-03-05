@@ -25,141 +25,34 @@
    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
    <style amp-custom>
         /* any custom styles go here. */
-        html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-            margin: 0;
-            padding: 0;
-            border: 0;
-            font-size: 100%;
-            font: inherit;
-            vertical-align: baseline;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: bold;
-        }
-        h6 {
-        font-size: 14px;
-        /* in use */ }
-
-        h5 {
-        font-size: 15px;
-        /* in use */ }
-
-        h4 {
-        font-size: 18px;
-        /* in use */
-        font-family: 'Roboto Slab', serif; }
-
-        h3 {
-        font-family: 'Roboto Slab', serif;
-        font-size: 21px;
-        margin: 15px 0 30px; }
-
-        h2 {
-        font-family: 'Roboto Slab', serif;
-        font-size: 26px;
-        /* in use */
-        margin-bottom: 15px; }
-
-        h1 {
-        font-family: 'Roboto Slab', serif;
-        font-size: 28px;
-        /* in use */
-        margin-bottom: 20px; }
-
-        hr {
-        margin: 15px 0;
-        border: none;
-        border-bottom: 1px solid #67757e; }
-        hr.dashed {
-            border-bottom-style: dashed;
-            border-bottom-color: #c2c2c2; 
-        }
-        html {
-            font-size: 62.5%;
-            width: 100%;
-            height: 99.9%;
-            position: relative;
-        }
-        
-        body {
-            position: relative;
-            line-height: 1.2;
-            font-size: 1.6rem;
-            font-family: 'Roboto', sans-serif;
-            width: 100%;
-            height: 99.9%;
-            /*background: #eee;*/
-            zoom: 1;
-            overflow: auto;
-            overflow-x: hidden;
-            color: #333;
-        }
-        ol, ul {
-            list-style: none;
-            margin: 0;
-        }
-        a {
-            color: #000;
-        }
-        h3 {
-            font-family: 'Roboto Slab', serif;
-            font-size: 21px;
-            margin: 15px 0 30px;
-        }
-        button[type="submit"], input[type="submit"], button {
-            padding: 0;
-            border: 0;
-        }
-
-        /*FONT*/
-        /* Font Awesome */
-        @font-face {
-            font-family: 'FontAwesome';
-            src: url('./../fonts/fontawesome-webfont.eot');
-            src: url('./../fonts/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), url('./../fonts/fontawesome-webfont.woff?v=4.0.3') format('woff'), url('./../fonts/fontawesome-webfont.ttf?v=4.0.3') format('truetype'), url('./../fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
-            font-weight: normal;
-            font-style: normal;
-        }
-        .fa {
-            display: inline-block;
-            font-family: FontAwesome;
-            font-style: normal;
-            font-weight: normal;
-            line-height: 1;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        .fa-facebook:before {
-            content: "\f09a";
-        }
-        .fa-twitter:before {
-            content: "\f099";
-        }
-        .fa-google-plus:before {
-            content: "\f0d5";
-        }
-        .fa-linkedin:before {
-            content: "\f0e1";
-        }
-        .fa-instagram:before {
-            content: "\f16d";
-        }
-        .fa-dribbble:before {
-            content: "\f17d";
-        }
-        .fa-skype:before {
-            content: "\f17e";
-        }
-        .fa-vk:before {
-            content: "\f189";
-        }
-        .fa-odnoklassniki:before {
-            content: "\f263";
-        }
-        .fa-feed:before, .fa-rss:before {
-            content: "\f09e";
-        }
-        /* /Font Awesome */
+        html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}
+        h1,h2,h3,h4,h5,h6{font-weight:700}
+        h6{font-size:14px}
+        h5{font-size:15px}
+        h4{font-size:18px;font-family:'Roboto Slab',serif}
+        h3{font-family:'Roboto Slab',serif;font-size:21px;margin:15px 0 30px}
+        h2{font-family:'Roboto Slab',serif;font-size:26px;margin-bottom:15px}
+        h1{font-family:'Roboto Slab',serif;font-size:28px;margin-bottom:20px}
+        hr{margin:15px 0;border:none;border-bottom:1px solid #67757e}
+        hr.dashed{border-bottom-style:dashed;border-bottom-color:#c2c2c2}
+        html{font-size:62.5%;width:100%;height:99.9%;position:relative}
+        body{position:relative;line-height:1.2;font-size:1.6rem;font-family:'Roboto',sans-serif;width:100%;height:99.9%;zoom:1;overflow:auto;overflow-x:hidden;color:#333}
+        ol,ul{list-style:none;margin:0}
+        a{color:#000}
+        h3{font-family:'Roboto Slab',serif;font-size:21px;margin:15px 0 30px}
+        button[type="submit"],input[type="submit"],button{padding:0;border:0}
+        @font-face{font-family:'FontAwesome';src:url(./../fonts/fontawesome-webfont.eot);src:url(./../fonts/fontawesome-webfont.eot?#iefix&v=4.0.3) format("embedded-opentype"),url(./../fonts/fontawesome-webfont.woff?v=4.0.3) format("woff"),url(./../fonts/fontawesome-webfont.ttf?v=4.0.3) format("truetype"),url(./../fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular) format("svg");font-weight:400;font-style:normal}
+        .fa{display:inline-block;font-family:FontAwesome;font-style:normal;font-weight:400;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+        .fa-facebook:before{content:"\f09a"}
+        .fa-twitter:before{content:"\f099"}
+        .fa-google-plus:before{content:"\f0d5"}
+        .fa-linkedin:before{content:"\f0e1"}
+        .fa-instagram:before{content:"\f16d"}
+        .fa-dribbble:before{content:"\f17d"}
+        .fa-skype:before{content:"\f17e"}
+        .fa-vk:before{content:"\f189"}
+        .fa-odnoklassniki:before{content:"\f263"}
+        .fa-feed:before,.fa-rss:before{content:"\f09e"}
         /*----------------COMMON------------- */
         .page {
             padding-top: 44px;
@@ -174,7 +67,6 @@
         .col-6:first-child {
             margin-left: 0;
         }
-
         .col-6 {
             width: 50%;
             margin-left: 10px;
@@ -186,7 +78,6 @@
         .article__container {
             margin-bottom: 15px;
         }
-        
         .bgColor_white, .bgColor_white .section-title {
             background: #fff;
             color: #000;
@@ -205,7 +96,6 @@
             padding-left: 15px;
             padding-right: 15px;
         }
-        
         .full-width {
             margin-left: -15px;
             margin-right: -15px;
@@ -724,7 +614,6 @@
             margin-right: 10px;
         }
         /*END COUNTER BLOCK*/
-
         /*SLIDES*/
         .slider__text {
             position: absolute;
