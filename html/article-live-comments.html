@@ -1021,16 +1021,12 @@
         .alasliderimage {
             position: relative;
         }
-        .alasliderimage__image {
-            display: -ms-flexbox;
-            display: flex;
-            -ms-flex-pack: center;
+        .alasliderimage__image {            
             justify-content: center;
             -ms-flex-align: center;
             align-items: center;
             width: 100%;
-            height: 260px;
-            overflow: hidden;
+            height: auto;
         }
         .alasliderimage__text {
             position: absolute;
@@ -1507,7 +1503,43 @@
             font-weight: 300;
             padding: 0 5px;
         }
+        .fa-whatsapp:before {
+            content: "\f232";
+        }
+        .fa-telegram:before {
+            content: "\f2c6";
+        }
+        .fa-viber:before {
+            content: "\f2a0";
+        }
+        .fa-email:before {
+            content: "\f003";
+        }
+        amp-sidebar .socials {
+            flex-direction: column;
+        }
+
+        amp-sidebar .socials a {
+            display: flex;
+            text-decoration: none;
+            color: white;
+            align-items: center;
+        }
+        amp-sidebar .socialNetwork__item {
+            margin-bottom: 10px;
+        }
+
+        .socials-text {
+            margin-left: 20px;
+        }
+
         /*END SOCIAL ARTICLE*/
+        .delimiter {
+            height: 2px;
+            box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.16);
+            margin-left: -15px;
+            margin-right: -15px;
+        }
     </style>
 </head>
 
@@ -1536,7 +1568,7 @@
                     <div class="col-12">
                             <div class="alasliderimage">
                                 <a href="#" class="alasliderimage__image" title="">
-                                    <amp-img src="https://www.ridus.ru/images/2016/3/9/374241/in_article_6e0fbfdc98.jpg" layout="fill" alt="Border Collie"></amp-img>
+                                    <amp-img src="https://www.ridus.ru/images/2016/3/9/374241/in_article_6e0fbfdc98.jpg" layout="responsive" width="320" height="211" alt="Border Collie"></amp-img>
                                 </a>
                                 <div class="alasliderimage__text">
                                     <a href="#life" class="brick__label" title="">жизнь</a>
@@ -1588,6 +1620,8 @@
                             Первыми с докладом ознакомились родственники погибших, журналисты пока ждут своей очереди. Пресс-конференция начнется в два
                             часа по московскому времени.
                         </p>
+
+                        <div class="delimiter"></div>
 
                         <p data-time="16:44">
                             «Никто не должен был там летать, ни единый самолет, так как это было слишком опасно. Мы все видели это по ТВ, я не верила
@@ -2898,22 +2932,58 @@
                 <hr>
                 <ul class="socials">
                     <li class="socialNetwork__item">
-                        <a class="socialNetwork__link fa fa-facebook" href="#" title=""></a>
+                        <a class="" href="#" title="">
+                            <span class="socialNetwork__link fa fa-facebook"></span>
+                            <span class="socials-text">Facebook</span>                            
+                        </a>
                     </li>
                     <li class="socialNetwork__item">
-                        <a class="socialNetwork__link fa fa-vk" href="#" title=""></a>
+                        <a class="" href="#" title="">
+                            <span class="socialNetwork__link fa fa-vk"></span>
+                            <span class="socials-text">VK</span>
+                        </a>
                     </li>
                     <li class="socialNetwork__item">
-                        <a class="socialNetwork__link fa fa-google-plus" href="#" title=""></a>
+                        <a class="" href="#" title="">
+                            <span class="socialNetwork__link fa fa-google-plus"></span>
+                            <span class="socials-text">Gmail</span>
+                        </a>
                     </li>
                     <li class="socialNetwork__item">
-                        <a class="socialNetwork__link fa fa-twitter" href="#" title=""></a>
+                        <a class="" href="#" title="">
+                            <span class="socialNetwork__link fa fa-twitter"></span>
+                            <span class="socials-text">Twitter</span>
+                        </a>
                     </li>
                     <li class="socialNetwork__item">
-                        <a class="socialNetwork__link fa fa-odnoklassniki" href="#" title=""></a>
+                        <a class="" href="#" title="">
+                            <span class="socialNetwork__link fa fa-odnoklassniki"></span>
+                            <span class="socials-text">Одноклассники</span>
+                        </a>
                     </li>
                     <li class="socialNetwork__item">
-                        <a class="socialNetwork__link fa fa-rss" href="#" title=""></a>
+                        <a class="" href="#" title="">
+                            <span class="socialNetwork__link fa fa-whatsapp"></span>
+                            <span class="socials-text">WhatsApp</span>
+                        </a>
+                    </li>
+                    <li class="socialNetwork__item">
+                        <a class="" href="#" title="">
+                            <span class="socialNetwork__link fa fa-viber"></span>
+                            <span class="socials-text">Viber</span>
+                        </a>
+                    </li>
+                    <li class="socialNetwork__item">
+                        <a class="" href="#" title="">
+                            <span class="socialNetwork__link fa fa-telegram"></span>
+                            <span class="socials-text">Telegram</span>
+                        </a>
+                    </li>
+                    <li class="socialNetwork__item">
+                        <a class="" href="#" title="">
+                            <span class="socialNetwork__link fa fa-email"></span>
+                            <span class="socials-text">Email</span>
+                        </a>
                     </li>
                 </ul>
 
